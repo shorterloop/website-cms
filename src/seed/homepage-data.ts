@@ -4,7 +4,7 @@
  */
 
 export const homepageData = {
-  blocks: [
+  sections: [
     // Section 1: Hero
     {
       blockType: 'hero',
