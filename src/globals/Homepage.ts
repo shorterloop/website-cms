@@ -17,6 +17,13 @@ import {
   FeaturesBlock,
   CapabilityLinksBlock,
   UseCasesBlock,
+  // P3 Blocks
+  TrustedByBlock,
+  PagePreviewBlock,
+  ProofImageBlock,
+  GateLeadCaptureBlock,
+  ChapterSectionBlock,
+  TableOfContentsBlock,
 } from '../blocks'
 import { seoFields } from '../fields'
 
@@ -57,6 +64,13 @@ export const Homepage: GlobalConfig = {
                 FeaturesBlock,
                 CapabilityLinksBlock,
                 UseCasesBlock,
+                // P3 Blocks
+                TrustedByBlock,
+                PagePreviewBlock,
+                ProofImageBlock,
+                GateLeadCaptureBlock,
+                ChapterSectionBlock,
+                TableOfContentsBlock,
               ],
               minRows: 1,
               admin: {

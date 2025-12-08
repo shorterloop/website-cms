@@ -17,3 +17,11 @@ export { ComparisonTableBlock } from './ComparisonTable'
 export { FeaturesBlock } from './Features'
 export { CapabilityLinksBlock } from './CapabilityLinks'
 export { UseCasesBlock } from './UseCases'
+
+// P3 Blocks
+export { TrustedByBlock } from './TrustedBy'
+export { PagePreviewBlock } from './PagePreview'
+export { ProofImageBlock } from './ProofImage'
+export { GateLeadCaptureBlock } from './GateLeadCapture'
+export { ChapterSectionBlock } from './ChapterSection'
+export { TableOfContentsBlock } from './TableOfContents'

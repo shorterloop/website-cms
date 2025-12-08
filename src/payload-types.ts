@@ -1141,6 +1141,238 @@ export interface Homepage {
             blockName?: string | null;
             blockType: 'useCases';
           }
+        | {
+            /**
+             * e.g., "Built for product teams who refuse to guess"
+             */
+            headline?: string | null;
+            /**
+             * How to display the trust signals
+             */
+            displayMode: 'logos' | 'audience_tags' | 'both';
+            /**
+             * Company logos (grayscale preferred)
+             */
+            logos?:
+              | {
+                  image: number | Media;
+                  alt: string;
+                  id?: string | null;
+                }[]
+              | null;
+            /**
+             * Self-identification tags for target audience
+             */
+            audienceTags?:
+              | {
+                  /**
+                   * e.g., "Product Managers", "CPOs", "Heads of Product"
+                   */
+                  label: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'trustedBy';
+          }
+        | {
+            /**
+             * e.g., "What you'll find on this page" or "On this page"
+             */
+            headline: string;
+            /**
+             * Anchored preview items (4-6). Use benefit-oriented labels.
+             */
+            previewItems: {
+              /**
+               * Benefit-oriented label, e.g., "How teams use this in practice" (not just "Use Cases")
+               */
+              label: string;
+              /**
+               * Section ID to scroll to (e.g., "use-cases", "faq", "comparison")
+               */
+              anchorId: string;
+              icon?:
+                | (
+                    | 'features'
+                    | 'use_cases'
+                    | 'integrations'
+                    | 'comparison'
+                    | 'faq'
+                    | 'testimonials'
+                    | 'workflow'
+                    | 'metrics'
+                  )
+                | null;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'pagePreview';
+          }
+        | {
+            /**
+             * Optional. e.g., "See it in action"
+             */
+            headline?: string | null;
+            /**
+             * Type of proof being shown
+             */
+            proofType: 'screenshot' | 'before_after' | 'output_example' | 'audit_log' | 'graph';
+            /**
+             * MUST be a real screenshot, not a mockup or illustration
+             */
+            image: number | Media;
+            /**
+             * Describe the scenario. What are we looking at? Include context.
+             */
+            caption: string;
+            /**
+             * e.g., "Created by a 12-person product team during Q3 planning"
+             */
+            context?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'proofImage';
+          }
+        | {
+            /**
+             * How to display the lead capture form
+             */
+            variant: 'inline' | 'modal' | 'full_page';
+            /**
+             * e.g., "Get the complete guide" or "Download the template"
+             */
+            headline: string;
+            /**
+             * What they'll get and why it's valuable
+             */
+            description?: string | null;
+            /**
+             * Preview of the gated content (cover image, first page, etc.)
+             */
+            previewImage?: (number | null) | Media;
+            /**
+             * Fields to collect (email is always required)
+             */
+            formFields: ('email' | 'name' | 'company' | 'role' | 'phone' | 'team_size')[];
+            /**
+             * e.g., "Download Now", "Get the Guide", "Access Template"
+             */
+            buttonText: string;
+            /**
+             * Brief privacy reassurance
+             */
+            privacyNote?: string | null;
+            /**
+             * Message shown after successful submission
+             */
+            successMessage?: string | null;
+            /**
+             * The gated file to be downloaded after form submission
+             */
+            downloadFile?: (number | null) | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'gateLeadCapture';
+          }
+        | {
+            /**
+             * Optional chapter number for numbered sections
+             */
+            chapterNumber?: number | null;
+            /**
+             * Chapter or section title
+             */
+            title: string;
+            /**
+             * For anchor links (e.g., "getting-started", "best-practices")
+             */
+            slug: string;
+            /**
+             * Main chapter content
+             */
+            body: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            /**
+             * Optional pullout insight or quote to highlight
+             */
+            keyInsight?: string | null;
+            /**
+             * Optional diagram, screenshot, or illustration
+             */
+            visual?: (number | null) | Media;
+            /**
+             * Optional callout for tips, warnings, or examples
+             */
+            callout?: {
+              showCallout?: boolean | null;
+              type?: ('tip' | 'warning' | 'example' | 'note' | 'quote') | null;
+              content?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'chapterSection';
+          }
+        | {
+            /**
+             * e.g., "On This Page", "Contents", "Jump To"
+             */
+            headline?: string | null;
+            /**
+             * Where to display the table of contents
+             */
+            position: 'sidebar_sticky' | 'top_inline' | 'floating';
+            /**
+             * Display a reading progress indicator
+             */
+            showProgress?: boolean | null;
+            /**
+             * Automatically generate TOC from page headings (H2, H3)
+             */
+            autoGenerate?: boolean | null;
+            /**
+             * Manual TOC entries (used if auto-generate is off)
+             */
+            items?:
+              | {
+                  /**
+                   * Display text for the TOC item
+                   */
+                  label: string;
+                  /**
+                   * Section ID to scroll to
+                   */
+                  anchorId: string;
+                  /**
+                   * Indentation level
+                   */
+                  level?: ('h2' | 'h3') | null;
+                  id?: string | null;
+                }[]
+              | null;
+            /**
+             * Hide the TOC on mobile devices (use floating button instead)
+             */
+            hideOnMobile?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'tableOfContents';
+          }
       )[]
     | null;
   /**
@@ -1539,6 +1771,106 @@ export interface HomepageSelect<T extends boolean = true> {
                     image?: T;
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        trustedBy?:
+          | T
+          | {
+              headline?: T;
+              displayMode?: T;
+              logos?:
+                | T
+                | {
+                    image?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              audienceTags?:
+                | T
+                | {
+                    label?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        pagePreview?:
+          | T
+          | {
+              headline?: T;
+              previewItems?:
+                | T
+                | {
+                    label?: T;
+                    anchorId?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        proofImage?:
+          | T
+          | {
+              headline?: T;
+              proofType?: T;
+              image?: T;
+              caption?: T;
+              context?: T;
+              id?: T;
+              blockName?: T;
+            };
+        gateLeadCapture?:
+          | T
+          | {
+              variant?: T;
+              headline?: T;
+              description?: T;
+              previewImage?: T;
+              formFields?: T;
+              buttonText?: T;
+              privacyNote?: T;
+              successMessage?: T;
+              downloadFile?: T;
+              id?: T;
+              blockName?: T;
+            };
+        chapterSection?:
+          | T
+          | {
+              chapterNumber?: T;
+              title?: T;
+              slug?: T;
+              body?: T;
+              keyInsight?: T;
+              visual?: T;
+              callout?:
+                | T
+                | {
+                    showCallout?: T;
+                    type?: T;
+                    content?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        tableOfContents?:
+          | T
+          | {
+              headline?: T;
+              position?: T;
+              showProgress?: T;
+              autoGenerate?: T;
+              items?:
+                | T
+                | {
+                    label?: T;
+                    anchorId?: T;
+                    level?: T;
+                    id?: T;
+                  };
+              hideOnMobile?: T;
               id?: T;
               blockName?: T;
             };
