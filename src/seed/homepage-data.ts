@@ -14,7 +14,7 @@ export const homepageData = {
       subheadline:
         'Most product teams ship fast but think slowly. Shorter Loop connects customer signals to product decisions—so you build what actually matters.',
       supportingText:
-        'Join product teams who've replaced gut feelings with evidence-based decisions.',
+        'Join product teams who\'ve replaced gut feelings with evidence-based decisions.',
       primaryCtaText: 'Start Free Trial',
       primaryCtaUrl: '/signup',
       secondaryCtaText: 'See How It Works',
