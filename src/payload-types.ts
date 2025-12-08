@@ -1518,6 +1518,76 @@ export interface Homepage {
             blockName?: string | null;
             blockType: 'rootCause';
           }
+        | {
+            /**
+             * Optional headline for the cards section
+             */
+            headline?: string | null;
+            /**
+             * Optional subheadline for the cards section
+             */
+            subheadline?: string | null;
+            /**
+             * How to display the cards
+             */
+            layout: 'grid-2' | 'grid-3' | 'grid-4' | 'scroll';
+            /**
+             * Add cards to this section (1-12)
+             */
+            cards: {
+              /**
+               * Card headline
+               */
+              headline: string;
+              /**
+               * Optional card subheadline
+               */
+              subheadline?: string | null;
+              /**
+               * Optional icon for the card
+               */
+              icon?:
+                | (
+                    | 'check'
+                    | 'star'
+                    | 'lightning'
+                    | 'shield'
+                    | 'chart'
+                    | 'users'
+                    | 'gear'
+                    | 'heart'
+                    | 'target'
+                    | 'rocket'
+                    | 'clock'
+                    | 'globe'
+                  )
+                | null;
+              /**
+               * Optional card description
+               */
+              description?: string | null;
+              /**
+               * Optional card image
+               */
+              image?: (number | null) | Media;
+              /**
+               * Where to position the image relative to content
+               */
+              imagePosition?: ('top' | 'bottom' | 'left' | 'right') | null;
+              /**
+               * Optional link for the card
+               */
+              linkUrl?: string | null;
+              /**
+               * Text for the link (if URL provided)
+               */
+              linkText?: string | null;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cards';
+          }
       )[]
     | null;
   /**
@@ -2080,6 +2150,28 @@ export interface HomepageSelect<T extends boolean = true> {
               reframe?: T;
               reframeHighlight?: T;
               visual?: T;
+              id?: T;
+              blockName?: T;
+            };
+        cards?:
+          | T
+          | {
+              headline?: T;
+              subheadline?: T;
+              layout?: T;
+              cards?:
+                | T
+                | {
+                    headline?: T;
+                    subheadline?: T;
+                    icon?: T;
+                    description?: T;
+                    image?: T;
+                    imagePosition?: T;
+                    linkUrl?: T;
+                    linkText?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };

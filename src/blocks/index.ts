@@ -30,3 +30,6 @@ export { TableOfContentsBlock } from './TableOfContents'
 export { AIEngineBlock } from './AIEngine'
 export { CapabilityClustersBlock } from './CapabilityClusters'
 export { RootCauseBlock } from './RootCause'
+
+// Utility Blocks
+export { CardsBlock } from './Cards'
