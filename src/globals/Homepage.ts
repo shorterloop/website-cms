@@ -28,6 +28,8 @@ import {
   AIEngineBlock,
   CapabilityClustersBlock,
   RootCauseBlock,
+  // Utility Blocks
+  CardsBlock,
 } from '../blocks'
 import { seoFields } from '../fields'
 
@@ -79,6 +81,8 @@ export const Homepage: GlobalConfig = {
                 AIEngineBlock,
                 CapabilityClustersBlock,
                 RootCauseBlock,
+                // Utility Blocks
+                CardsBlock,
               ],
               minRows: 1,
               admin: {
