@@ -86,8 +86,12 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    homepage: Homepage;
+  };
+  globalsSelect: {
+    homepage: HomepageSelect<false> | HomepageSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -307,6 +311,194 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * Manage the homepage content. The homepage is designed to communicate value in under 3 seconds.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "homepage".
+ */
+export interface Homepage {
+  id: number;
+  /**
+   * Add and arrange sections for the homepage. Start with a Hero block.
+   */
+  sections?:
+    | (
+        | {
+            /**
+             * Small text above the headline (e.g., "Discovery-First Product Management")
+             */
+            eyebrow?: string | null;
+            /**
+             * Main headline. Action-oriented, no jargon. Must pass the "so what" test in 3 seconds.
+             */
+            headline: string;
+            /**
+             * Word to highlight in the headline (will be styled with accent color)
+             */
+            headlineEmphasisWord?: string | null;
+            /**
+             * Expands on headline. Plain English value prop.
+             */
+            subheadline: string;
+            /**
+             * Optional proof point or additional context.
+             */
+            supportingText?: string | null;
+            /**
+             * e.g., "Start Free Trial"
+             */
+            primaryCtaText: string;
+            /**
+             * Valid internal path or URL
+             */
+            primaryCtaUrl: string;
+            /**
+             * e.g., "See How It Works"
+             */
+            secondaryCtaText?: string | null;
+            /**
+             * Valid internal path or URL
+             */
+            secondaryCtaUrl?: string | null;
+            /**
+             * Product screenshot or illustration. Shows the product, not stock photography.
+             */
+            image: number | Media;
+            /**
+             * Small trust signal below CTAs (e.g., "No credit card required")
+             */
+            trustNote?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero';
+          }
+        | {
+            /**
+             * Controls the visual style of the CTA section
+             */
+            variant?: ('standard' | 'compact' | 'final') | null;
+            /**
+             * Display large logo mark above headline (typically for final CTA)
+             */
+            showLogoMark?: boolean | null;
+            /**
+             * Strong, transformation-focused headline. Reinforce core value.
+             */
+            headline: string;
+            /**
+             * Optional supporting text or final nudge.
+             */
+            subheadline?: string | null;
+            /**
+             * Action verb + outcome (e.g., "Start Free Trial")
+             */
+            primaryCtaText: string;
+            /**
+             * Usually signup or trial
+             */
+            primaryCtaUrl: string;
+            /**
+             * Alternative action (e.g., "Book a Demo")
+             */
+            secondaryCtaText?: string | null;
+            /**
+             * Demo or contact page
+             */
+            secondaryCtaUrl?: string | null;
+            /**
+             * Display trust signals below the CTAs
+             */
+            showTrustSignals?: boolean | null;
+            /**
+             * Reduce friction with trust signals (e.g., "No credit card required")
+             */
+            trustSignals?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            /**
+             * Optional extra context below the CTA buttons
+             */
+            additionalMessage?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cta';
+          }
+      )[]
+    | null;
+  /**
+   * Page title for search engines (50-60 characters)
+   */
+  metaTitle?: string | null;
+  /**
+   * Page description for search engines (150-160 characters)
+   */
+  metaDescription?: string | null;
+  /**
+   * Image for social media sharing (1200x630px recommended)
+   */
+  ogImage?: (number | null) | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "homepage_select".
+ */
+export interface HomepageSelect<T extends boolean = true> {
+  sections?:
+    | T
+    | {
+        hero?:
+          | T
+          | {
+              eyebrow?: T;
+              headline?: T;
+              headlineEmphasisWord?: T;
+              subheadline?: T;
+              supportingText?: T;
+              primaryCtaText?: T;
+              primaryCtaUrl?: T;
+              secondaryCtaText?: T;
+              secondaryCtaUrl?: T;
+              image?: T;
+              trustNote?: T;
+              id?: T;
+              blockName?: T;
+            };
+        cta?:
+          | T
+          | {
+              variant?: T;
+              showLogoMark?: T;
+              headline?: T;
+              subheadline?: T;
+              primaryCtaText?: T;
+              primaryCtaUrl?: T;
+              secondaryCtaText?: T;
+              secondaryCtaUrl?: T;
+              showTrustSignals?: T;
+              trustSignals?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              additionalMessage?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  metaTitle?: T;
+  metaDescription?: T;
+  ogImage?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
