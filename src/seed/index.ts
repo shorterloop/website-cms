@@ -22,11 +22,11 @@ async function seed() {
     })
 
     const hasExistingBlocks =
-      existingHomepage?.blocks && existingHomepage.blocks.length > 0
+      existingHomepage?.sections && existingHomepage.sections.length > 0
 
     if (hasExistingBlocks) {
       console.log('⚠️  Homepage already has content. Skipping seed.')
-      console.log(`   Current blocks: ${existingHomepage.blocks?.length || 0}`)
+      console.log(`   Current sections: ${existingHomepage.sections?.length || 0}`)
       console.log(
         '   To re-seed, first clear the homepage content in the admin panel.',
       )
@@ -41,13 +41,13 @@ async function seed() {
     await payload.updateGlobal({
       slug: 'homepage',
       data: {
-        blocks: homepageData.blocks,
-        seo: homepageData.seo,
+        sections: homepageData.sections,
+        ...homepageData.seo,
       },
     })
 
     console.log('✅ Homepage seeded successfully!')
-    console.log('   Blocks created:', homepageData.blocks.length)
+    console.log('   Sections created:', homepageData.sections.length)
     console.log('')
     console.log('📝 Next steps:')
     console.log('   1. Log into the admin panel at /admin')
