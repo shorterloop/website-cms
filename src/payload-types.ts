@@ -428,20 +428,121 @@ export interface Homepage {
             blockName?: string | null;
             blockType: 'cta';
           }
+        | {
+            /**
+             * How to display the testimonial(s)
+             */
+            variant?: ('single' | 'multiple' | 'with_metrics') | null;
+            /**
+             * e.g., "Teams Who've Made the Shift" or "What Product Teams Say"
+             */
+            headline?: string | null;
+            /**
+             * Quality over quantity. Specific outcomes beat generic praise.
+             */
+            quotes: {
+              /**
+               * The testimonial text. Must include specific outcome, not generic praise.
+               */
+              quote: string;
+              /**
+               * Optional context for the quote (e.g., "After 3 months using Shorter Loop")
+               */
+              context?: string | null;
+              authorName: string;
+              /**
+               * Role and company
+               */
+              authorTitle: string;
+              /**
+               * Headshot (increases trust significantly)
+               */
+              authorImage?: (number | null) | Media;
+              companyLogo?: (number | null) | Media;
+              /**
+               * Optional 1-5 star rating
+               */
+              rating?: number | null;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'testimonial';
+          }
+        | {
+            /**
+             * How to display the metrics
+             */
+            variant?: ('bar' | 'grid' | 'cards') | null;
+            /**
+             * Optional headline above the metrics
+             */
+            headline?: string | null;
+            /**
+             * Optional supporting text
+             */
+            subheadline?: string | null;
+            /**
+             * Each stat must include a concrete number, percentage, or timeframe
+             */
+            stats: {
+              /**
+               * e.g., "80%", "3x", "12 weeks", "40%"
+               */
+              value: string;
+              /**
+               * What the metric measures
+               */
+              label: string;
+              /**
+               * Optional additional context for the metric
+               */
+              context?: string | null;
+              /**
+               * Give this stat visual emphasis (accent color)
+               */
+              highlighted?: boolean | null;
+              id?: string | null;
+            }[];
+            /**
+             * Optional source for the stats (e.g., "Based on customer surveys Q3 2024")
+             */
+            source?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'metrics';
+          }
       )[]
     | null;
   /**
-   * Page title for search engines (50-60 characters)
+   * Page title for search engines. Include primary keyword near the front. (50-60 characters)
    */
   metaTitle?: string | null;
   /**
-   * Page description for search engines (150-160 characters)
+   * Page description for search engines. Should be compelling with problem + promise. (150-160 characters)
    */
   metaDescription?: string | null;
+  /**
+   * Primary and secondary keywords for SEO tracking (not used by Google, but useful for internal reference)
+   */
+  metaKeywords?:
+    | {
+        keyword: string;
+        id?: string | null;
+      }[]
+    | null;
   /**
    * Image for social media sharing (1200x630px recommended)
    */
   ogImage?: (number | null) | Media;
+  /**
+   * Only set if this page should point to a different canonical URL
+   */
+  canonicalUrl?: string | null;
+  /**
+   * Prevent search engines from indexing this page
+   */
+  noIndex?: boolean | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -492,10 +593,57 @@ export interface HomepageSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        testimonial?:
+          | T
+          | {
+              variant?: T;
+              headline?: T;
+              quotes?:
+                | T
+                | {
+                    quote?: T;
+                    context?: T;
+                    authorName?: T;
+                    authorTitle?: T;
+                    authorImage?: T;
+                    companyLogo?: T;
+                    rating?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        metrics?:
+          | T
+          | {
+              variant?: T;
+              headline?: T;
+              subheadline?: T;
+              stats?:
+                | T
+                | {
+                    value?: T;
+                    label?: T;
+                    context?: T;
+                    highlighted?: T;
+                    id?: T;
+                  };
+              source?: T;
+              id?: T;
+              blockName?: T;
+            };
       };
   metaTitle?: T;
   metaDescription?: T;
+  metaKeywords?:
+    | T
+    | {
+        keyword?: T;
+        id?: T;
+      };
   ogImage?: T;
+  canonicalUrl?: T;
+  noIndex?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
