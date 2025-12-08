@@ -875,6 +875,272 @@ export interface Homepage {
             blockName?: string | null;
             blockType: 'relatedContent';
           }
+        | {
+            /**
+             * e.g., "Frequently Asked Questions"
+             */
+            headline: string;
+            /**
+             * More questions is better for SEO (6-15 recommended)
+             */
+            questions: {
+              /**
+               * Natural language question matching real search queries
+               */
+              question: string;
+              /**
+               * Comprehensive answer. Schema-eligible answers need 150+ characters for rich snippets.
+               */
+              answer: string;
+              /**
+               * Optional grouping
+               */
+              category?: ('general' | 'technical' | 'pricing' | 'security') | null;
+              /**
+               * Include in FAQ schema markup for rich snippets?
+               */
+              schemaEligible?: boolean | null;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'faq';
+          }
+        | {
+            /**
+             * e.g., "Feedback Manager vs. Traditional Tools"
+             */
+            headline: string;
+            /**
+             * Frame the comparison
+             */
+            subheadline?: string | null;
+            /**
+             * Compare against categories or named competitors
+             */
+            comparisonType: 'category' | 'specific';
+            /**
+             * Comparison columns (your product + competitors/alternatives)
+             */
+            columns: {
+              /**
+               * e.g., "Short Loop", "Spreadsheets", "Generic PM Tools"
+               */
+              name: string;
+              /**
+               * Check if this column represents your product (for styling)
+               */
+              isSelf?: boolean | null;
+              id?: string | null;
+            }[];
+            /**
+             * Features/criteria being compared
+             */
+            rows: {
+              /**
+               * What's being compared
+               */
+              feature: string;
+              /**
+               * Value for each column (must match number of columns)
+               */
+              values: {
+                /**
+                 * Which column (0, 1, or 2)
+                 */
+                columnIndex: number;
+                /**
+                 * Can include ✓/✗ or be descriptive
+                 */
+                value: string;
+                highlight?: boolean | null;
+                id?: string | null;
+              }[];
+              id?: string | null;
+            }[];
+            /**
+             * Optional wrap-up statement
+             */
+            conclusion?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'comparisonTable';
+          }
+        | {
+            /**
+             * e.g., "Built for Teams That Listen"
+             */
+            headline: string;
+            /**
+             * Optional framing
+             */
+            subheadline?: string | null;
+            /**
+             * Primary features shown prominently (2-3)
+             */
+            heroFeatures: {
+              title: string;
+              /**
+               * One-line value prop
+               */
+              tagline: string;
+              /**
+               * Detailed explanation
+               */
+              description: string;
+              benefits: {
+                /**
+                 * Single benefit (outcome, not specification)
+                 */
+                text: string;
+                id?: string | null;
+              }[];
+              /**
+               * Screenshot or illustration
+               */
+              image: number | Media;
+              id?: string | null;
+            }[];
+            /**
+             * Secondary features shown smaller (0-6)
+             */
+            additionalFeatures?:
+              | {
+                  title: string;
+                  /**
+                   * One-line value prop
+                   */
+                  tagline: string;
+                  /**
+                   * Brief explanation
+                   */
+                  description: string;
+                  icon:
+                    | 'collect'
+                    | 'organize'
+                    | 'analyze'
+                    | 'prioritize'
+                    | 'track'
+                    | 'report'
+                    | 'integrate'
+                    | 'automate'
+                    | 'collaborate'
+                    | 'secure';
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'features';
+          }
+        | {
+            /**
+             * e.g., "Powered By" or "Built With"
+             */
+            headline: string;
+            /**
+             * Optional context
+             */
+            subheadline?: string | null;
+            /**
+             * Capabilities that power this solution (2-4)
+             */
+            capabilities: {
+              /**
+               * URL slug of the capability page
+               */
+              capabilitySlug: string;
+              /**
+               * e.g., "Feedback Manager", "Signals Engine"
+               */
+              capabilityName: string;
+              /**
+               * Why this capability matters here
+               */
+              roleInSolution: string;
+              icon?:
+                | ('feedback' | 'signals' | 'roadmap' | 'ost' | 'analytics' | 'insights' | 'workflow' | 'collaboration')
+                | null;
+              id?: string | null;
+            }[];
+            /**
+             * Optional call to action
+             */
+            ctaText?: string | null;
+            /**
+             * Link to capabilities overview page
+             */
+            ctaUrl?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'capabilityLinks';
+          }
+        | {
+            /**
+             * e.g., "How Teams Use Feedback Manager"
+             */
+            headline: string;
+            /**
+             * Optional framing
+             */
+            subheadline?: string | null;
+            /**
+             * Different scenarios or personas (2-4)
+             */
+            useCases: {
+              /**
+               * Scenario title, e.g., "SaaS Product Team"
+               */
+              title: string;
+              /**
+               * Context, e.g., "500+ backlog items"
+               */
+              subtitle?: string | null;
+              /**
+               * e.g., "B2B SaaS, 25-person team"
+               */
+              companyType?: string | null;
+              /**
+               * The problem they faced
+               */
+              challenge: string;
+              /**
+               * How they used the capability
+               */
+              solution: string;
+              /**
+               * Outcomes achieved. At least one must have a metric!
+               */
+              results: {
+                /**
+                 * Single result statement
+                 */
+                text: string;
+                /**
+                 * Does this result include a number/percentage/timeframe?
+                 */
+                hasMetric: boolean;
+                id?: string | null;
+              }[];
+              showQuote?: boolean | null;
+              quote?: {
+                text: string;
+                authorName: string;
+                /**
+                 * Role and company
+                 */
+                authorTitle: string;
+              };
+              /**
+               * Optional visual
+               */
+              image?: (number | null) | Media;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'useCases';
+          }
       )[]
     | null;
   /**
@@ -1138,6 +1404,138 @@ export interface HomepageSelect<T extends boolean = true> {
                     relationshipType?: T;
                     contentType?: T;
                     description?: T;
+                    image?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        faq?:
+          | T
+          | {
+              headline?: T;
+              questions?:
+                | T
+                | {
+                    question?: T;
+                    answer?: T;
+                    category?: T;
+                    schemaEligible?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        comparisonTable?:
+          | T
+          | {
+              headline?: T;
+              subheadline?: T;
+              comparisonType?: T;
+              columns?:
+                | T
+                | {
+                    name?: T;
+                    isSelf?: T;
+                    id?: T;
+                  };
+              rows?:
+                | T
+                | {
+                    feature?: T;
+                    values?:
+                      | T
+                      | {
+                          columnIndex?: T;
+                          value?: T;
+                          highlight?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              conclusion?: T;
+              id?: T;
+              blockName?: T;
+            };
+        features?:
+          | T
+          | {
+              headline?: T;
+              subheadline?: T;
+              heroFeatures?:
+                | T
+                | {
+                    title?: T;
+                    tagline?: T;
+                    description?: T;
+                    benefits?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    image?: T;
+                    id?: T;
+                  };
+              additionalFeatures?:
+                | T
+                | {
+                    title?: T;
+                    tagline?: T;
+                    description?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        capabilityLinks?:
+          | T
+          | {
+              headline?: T;
+              subheadline?: T;
+              capabilities?:
+                | T
+                | {
+                    capabilitySlug?: T;
+                    capabilityName?: T;
+                    roleInSolution?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              ctaText?: T;
+              ctaUrl?: T;
+              id?: T;
+              blockName?: T;
+            };
+        useCases?:
+          | T
+          | {
+              headline?: T;
+              subheadline?: T;
+              useCases?:
+                | T
+                | {
+                    title?: T;
+                    subtitle?: T;
+                    companyType?: T;
+                    challenge?: T;
+                    solution?: T;
+                    results?:
+                      | T
+                      | {
+                          text?: T;
+                          hasMetric?: T;
+                          id?: T;
+                        };
+                    showQuote?: T;
+                    quote?:
+                      | T
+                      | {
+                          text?: T;
+                          authorName?: T;
+                          authorTitle?: T;
+                        };
                     image?: T;
                     id?: T;
                   };
