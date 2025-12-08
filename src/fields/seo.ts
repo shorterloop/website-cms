@@ -11,9 +11,9 @@ export const seoFields: Field[] = [
     type: 'text',
     label: 'Meta Title',
     admin: {
-      description: 'Page title for search engines. Include primary keyword near the front. (50-60 characters)',
+      description: 'Page title for search engines. Include primary keyword near the front. (30-60 characters)',
     },
-    minLength: 50,
+    minLength: 30,
     maxLength: 60,
   },
   {

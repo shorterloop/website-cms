@@ -103,7 +103,6 @@ export const AIEngineBlock: Block = {
       type: 'upload',
       relationTo: 'media',
       label: 'Visual',
-      required: true,
       admin: {
         description: 'Screenshot or illustration showing AI in action',
       },
