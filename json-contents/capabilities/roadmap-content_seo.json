@@ -1,0 +1,687 @@
+{
+  "page_title": "Roadmap - Align Strategy to Execution Across Your Organization",
+  "meta": {
+    "description": "Two-level roadmap planning that connects organizational themes to product delivery. See how every team's work ladders up to company goals on one visual timeline.",
+    "keywords": "roadmap, organizational roadmap, product roadmap, themes, timeline planning, strategic alignment, resource planning"
+  },
+  "hero": {
+    "headline": "# Align Strategy to Execution Across Your Organization with Roadmap Software",
+    "subheadline": "Two-level roadmap planning that connects organizational themes to product delivery. Finally see how every team's work ladders up to company goals—on one visual timeline.",
+    "supporting_text": "Join product organizations that plan strategically at the top, execute confidently at the product level, and keep both perfectly synchronized.",
+    "primary_cta": {
+      "text": "Start Your Roadmap",
+      "url": "#"
+    },
+    "secondary_cta": {
+      "text": "See It In Action",
+      "url": "#"
+    },
+    "hero_image": {
+      "url": "https://placehold.co/1200x600/0ea5e9/ffffff?text=Roadmap+Timeline+View",
+      "alt": "Roadmap Timeline"
+    },
+    "_formatting": {
+      "headline": "h1",
+      "subheadline": "h2_or_large_text",
+      "supporting_text": "paragraph"
+    }
+  },
+  "problem": {
+    "headline": "## The Roadmap Alignment Problem",
+    "subheadline": "*Most organizations struggle to connect strategic intent with product execution*",
+    "pain_points": [
+      {
+        "icon": "🎯",
+        "title": "**Strategy Disconnect**",
+        "description": "Leadership defines themes and strategic pillars in PowerPoint. Product teams plan features in separate tools. No one sees how they connect. This supports Roadmap software free.",
+        "_formatting": {
+          "title": "bold"
+        }
+      },
+      {
+        "icon": "🔀",
+        "title": "**Cross-Team Chaos**",
+        "description": "Multiple teams building toward the same goal with zero coordination. Duplicate efforts, conflicting timelines, wasted resources. This supports Roadmap software download.",
+        "_formatting": {
+          "title": "bold"
+        }
+      },
+      {
+        "icon": "📅",
+        "title": "**Timeline Misalignment**",
+        "description": "Organizational quarters don't match product sprints. Strategic initiatives have deadlines but no visibility into what's actually getting built when. This supports Best roadmap software.",
+        "_formatting": {
+          "title": "bold"
+        }
+      }
+    ],
+    "_formatting": {
+      "headline": "h2"
+    },
+    "subheadline_h3": "### Most organizations struggle to connect strategic intent with product execution"
+  },
+  "solution": {
+    "headline": "## Two Roadmaps. One Timeline. Perfect Alignment.",
+    "subheadline": "*Organizational strategy meets product execution on a unified visual timeline*",
+    "conclusion": "Strategic themes flow down. Execution visibility flows up. Everyone stays aligned.",
+    "levels": [
+      {
+        "type": "organizational",
+        "badge": "Leadership Level",
+        "icon": "📊",
+        "title": "Organizational Roadmap",
+        "description": "Define strategic themes, allocate investment, and set organizational timelines. Create the 'why' and 'when' for your entire company.",
+        "features": [
+          {
+            "icon": "🎨",
+            "title": "Strategic Themes",
+            "description": "Define company-wide strategic pillars with investment allocation"
+          },
+          {
+            "icon": "📊",
+            "title": "Investment Planning",
+            "description": "Set resource allocation (% or #) across themes"
+          },
+          {
+            "icon": "⏰",
+            "title": "Organizational Intervals",
+            "description": "Create quarters, releases, or custom timeboxes"
+          },
+          {
+            "icon": "🎯",
+            "title": "Cross-Product Visibility",
+            "description": "See which products contribute to each theme"
+          }
+        ]
+      },
+      {
+        "type": "product",
+        "badge": "Team Level",
+        "icon": "🛠️",
+        "title": "Product Roadmap",
+        "description": "Plan objectives within themes, organize by product areas, and schedule features on the timeline. Build the 'what' and 'how' aligned to organizational strategy.",
+        "features": [
+          {
+            "icon": "🎯",
+            "title": "Objective Planning",
+            "description": "Link product objectives to organizational themes"
+          },
+          {
+            "icon": "📋",
+            "title": "Work Item Hierarchy",
+            "description": "Organize objectives → epics → features"
+          },
+          {
+            "icon": "🗓️",
+            "title": "Timeline Scheduling",
+            "description": "Drag-drop items onto inherited org intervals"
+          },
+          {
+            "icon": "👥",
+            "title": "Team Organization",
+            "description": "Swimlanes for product areas, teams, or modules"
+          }
+        ]
+      }
+    ],
+    "_formatting": {
+      "headline": "h2"
+    },
+    "subheadline_h3": "### Organizational strategy meets product execution on a unified visual timeline"
+  },
+  "features": {
+    "headline": "Built for Real Roadmap Planning",
+    "feature_list": [
+      {
+        "title": "Visual Timeline Planning",
+        "tagline": "See your entire organization's plan on one screen",
+        "description": "Grid-based timeline with swimlanes (themes or product areas) on the vertical axis and intervals (quarters, releases, sprints) on the horizontal. Every work item visible in its timeframe and context.",
+        "benefits": [
+          "Swimlane-based organization",
+          "Customizable time intervals with date ranges",
+          "Hierarchical timeboxes (quarters → sprints)",
+          "Color-coded cards for instant clarity"
+        ],
+        "image": {
+          "url": "https://placehold.co/600x400/0ea5e9/ffffff?text=Visual+Timeline+Planning",
+          "alt": "Visual Timeline"
+        }
+      },
+      {
+        "title": "Drag-and-Drop Planning",
+        "tagline": "Reschedule in seconds, not meetings",
+        "description": "Drag objectives, epics, or features from the backlog directly onto the timeline. Move between intervals, change swimlanes, reorganize on the fly. Changes sync instantly across teams.",
+        "benefits": [
+          "Backlog panel with orphan items",
+          "Drag from backlog to timeline",
+          "Move across intervals and swimlanes",
+          "Parent-child relationships maintained"
+        ],
+        "image": {
+          "url": "https://placehold.co/600x400/8b5cf6/ffffff?text=Drag+and+Drop+Planning",
+          "alt": "Drag and Drop"
+        }
+      },
+      {
+        "title": "Theme-Based Alignment",
+        "tagline": "Connect product work to strategic themes",
+        "description": "Organizational themes become the organizing principle for all product work. Leadership defines themes with investment allocations. Product teams plan objectives within those themes. Everyone sees the connection.",
+        "benefits": [
+          "Investment share planning (% or #)",
+          "Priority alignment (high/medium/low)",
+          "Theme-specific roadmap views",
+          "Cross-product theme tracking"
+        ],
+        "image": {
+          "url": "https://placehold.co/600x400/f59e0b/ffffff?text=Theme-Based+Planning",
+          "alt": "Theme Planning"
+        }
+      },
+      {
+        "title": "Hierarchical Work Items",
+        "tagline": "From objectives to features, maintain the full context",
+        "description": "Three-level hierarchy: Business Objectives contain Epics, which contain Features. Plan at any level. Drill down for details. Roll up for the big picture. Move a parent, children follow automatically.",
+        "benefits": [
+          "Objectives (OBJ-) → Epics (EP-) → Features (FE-)",
+          "Automatic cascade on parent moves",
+          "Nested progress tracking",
+          "Filter by work item type"
+        ],
+        "image": {
+          "url": "https://placehold.co/600x400/10b981/ffffff?text=Hierarchical+Work+Items",
+          "alt": "Hierarchy"
+        }
+      },
+      {
+        "title": "Multi-Team Collaboration",
+        "tagline": "Keep distributed teams synchronized",
+        "description": "Real-time updates across all connected sessions. User and team assignment. Status tracking. Progress indicators. Search, filter, and focus on what matters to each stakeholder.",
+        "benefits": [
+          "Live collaborative editing",
+          "Multi-user and team assignment",
+          "Status and progress tracking",
+          "Advanced filtering (owner, status, team)"
+        ],
+        "image": {
+          "url": "https://placehold.co/600x400/ef4444/ffffff?text=Real-Time+Collaboration",
+          "alt": "Collaboration"
+        }
+      },
+      {
+        "title": "Strategy Board Integration",
+        "tagline": "From strategic hypothesis to scheduled feature",
+        "description": "Objectives planned on your roadmap can trace back to opportunities and solutions on your strategy board. Validated experiments become scheduled features. Strategy informs roadmap. Roadmap validates strategy.",
+        "benefits": [
+          "Link objectives to strategy items",
+          "Track experiment outcomes to features",
+          "Unified view across planning layers",
+          "Wiki and documentation integration"
+        ],
+        "image": {
+          "url": "https://placehold.co/600x400/06b6d4/ffffff?text=Strategy+Board+Integration",
+          "alt": "Integration"
+        }
+      }
+    ]
+  },
+  "how_it_works": {
+    "headline": "How It Works in Practice",
+    "subheadline": "A simple visual example of two-level roadmap planning",
+    "timeline_example": {
+      "description": "Grid showing themes/areas on vertical axis and quarters on horizontal axis with work items placed in cells",
+      "swimlanes": [
+        "Customer Growth",
+        "Platform Scalability",
+        "Revenue Expansion"
+      ],
+      "intervals": [
+        "Q1 2025",
+        "Q2 2025",
+        "Q3 2025",
+        "Q4 2025"
+      ]
+    },
+    "stats": [
+      {
+        "number": "2",
+        "label": "Planning Levels (Org + Product)"
+      },
+      {
+        "number": "∞",
+        "label": "Teams Aligned to Same Themes"
+      },
+      {
+        "number": "1",
+        "label": "Source of Truth for Timeline"
+      },
+      {
+        "number": "0",
+        "label": "PowerPoint Decks Required"
+      }
+    ]
+  },
+  "use_cases": {
+    "headline": "## How Teams Use Two-Level Roadmaps",
+    "cases": [
+      {
+        "title": "### Enterprise Product Organization",
+        "subtitle": "*Aligning 12 product teams to 4 strategic themes*",
+        "description": "A SaaS company with 12 product teams was struggling with strategic alignment. Leadership defined 4 strategic themes (Customer Growth, Platform Scalability, Revenue Expansion, Security & Compliance) but had no visibility into which teams were contributing to each theme or when.",
+        "solution": "With two-level roadmaps: Leadership created an organizational roadmap with the 4 themes and defined quarterly intervals with investment targets (30% Customer Growth, 25% Scalability, 25% Revenue, 20% Security). Each product team created roadmaps linking their objectives to organizational themes. Leadership now sees a real-time view of all 12 teams' work organized by theme and quarter.",
+        "results": [
+          "**100% visibility into theme-to-delivery alignment**",
+          "**Eliminated 3 duplicate initiatives across teams**",
+          "**Identified underinvestment in Security (only 12% vs target 20%)**",
+          "**Quarterly planning meetings reduced from 8 hours to 2 hours**"
+        ],
+        "image": {
+          "url": "https://placehold.co/1200x400/0ea5e9/ffffff?text=Multi-Team+Roadmap+Alignment",
+          "alt": "Enterprise Use Case"
+        }
+      },
+      {
+        "title": "### Fast-Growing Startup",
+        "subtitle": "*Scaling from 1 to 5 product teams without losing focus*",
+        "description": "A Series B startup grew from 1 product team to 5 in 6 months. Their roadmap was a Google Sheet that quickly became unmaintainable. Different teams planned in different tools, timelines conflicted, and the CEO lost visibility into what was actually getting built.",
+        "solution": "With two-level roadmaps: The CPO defined 3 strategic themes (Product-Market Fit, Enterprise Readiness, Platform Foundation) on an organizational roadmap with 6-week release cycles. Each new product team created their roadmap aligned to these themes and intervals. The CEO can now filter by theme to see cross-team progress or by team to see individual execution.",
+        "results": [
+          "**Scaled from 1 to 5 teams without planning chaos**",
+          "**CEO visibility into all work on a single screen**",
+          "**New teams onboard to planning process in under 1 hour**",
+          "**Strategic themes guide hiring and resource allocation decisions**"
+        ],
+        "image": {
+          "url": "https://placehold.co/1200x400/10b981/ffffff?text=Startup+Roadmap+Scaling",
+          "alt": "Startup Use Case"
+        }
+      },
+      {
+        "title": "### Platform Company",
+        "subtitle": "*Coordinating product and platform team dependencies*",
+        "description": "A platform company had 4 product teams and 2 platform teams (API, Infrastructure). Product teams would plan features that depended on platform work, but platform teams had no visibility into these dependencies. Launches kept slipping because platform work wasn't scheduled.",
+        "solution": "With two-level roadmaps: Product and platform teams all plan on the same organizational timeline. When a product team drags an objective requiring new API endpoints onto Q2, they tag it with dependencies. Platform team sees this in their roadmap view, schedules the API work in Q1. Dependencies are visible, timelines coordinate automatically.",
+        "results": [
+          "**Zero launch delays due to platform dependencies in 6 months**",
+          "**Platform team roadmap driven by actual product needs**",
+          "**Product teams can see platform capacity before committing**",
+          "**Reduced cross-team planning meetings by 60%**"
+        ],
+        "image": {
+          "url": "https://placehold.co/1200x400/f59e0b/ffffff?text=Platform+Dependency+Management",
+          "alt": "Platform Use Case"
+        }
+      }
+    ]
+  },
+  "comparison": {
+    "headline": "Organizational vs Product Roadmaps",
+    "subheadline": "Understanding the two levels and how they work together",
+    "conclusion": "Both levels share the same timeline. Changes at the org level cascade down. Progress at the product level rolls up. Perfect synchronization.",
+    "table": [
+      {
+        "aspect": "Who Creates It",
+        "organizational": "Leadership (CPO, CEO, Strategy)",
+        "product": "Product Teams (PM, Engineering Leads)"
+      },
+      {
+        "aspect": "Primary Purpose",
+        "organizational": "Define strategic themes and timelines",
+        "product": "Plan execution within themes and timelines"
+      },
+      {
+        "aspect": "Swimlanes Represent",
+        "organizational": "Strategic themes (e.g., \"Customer Growth\")",
+        "product": "Product areas, teams, or modules"
+      },
+      {
+        "aspect": "Work Items",
+        "organizational": "High-level organizational objectives",
+        "product": "Product objectives, epics, features"
+      },
+      {
+        "aspect": "Timeline Intervals",
+        "organizational": "Defined once (quarters, releases, etc.)",
+        "product": "Inherited from organizational roadmap"
+      },
+      {
+        "aspect": "Investment Planning",
+        "organizational": "Allocate % or # across themes",
+        "product": "Team capacity and resource planning"
+      },
+      {
+        "aspect": "Scope",
+        "organizational": "One per organization/subscription",
+        "product": "Multiple per product/initiative"
+      },
+      {
+        "aspect": "Typical Audience",
+        "organizational": "Board, executives, leadership team",
+        "product": "Product teams, stakeholders, engineers"
+      },
+      {
+        "aspect": "Update Frequency",
+        "organizational": "Quarterly or per release cycle",
+        "product": "Weekly or continuously"
+      },
+      {
+        "aspect": "Alignment Mechanism",
+        "organizational": "Sets the 'why' and 'when'",
+        "product": "Delivers the 'what' and 'how'"
+      }
+    ]
+  },
+  "key_features": {
+    "headline": "Key Features at a Glance",
+    "features": [
+      {
+        "icon": "🎨",
+        "title": "Visual Planning",
+        "description": "Grid-based timeline with swimlanes and intervals. See everything at once."
+      },
+      {
+        "icon": "🖱️",
+        "title": "Drag-and-Drop",
+        "description": "Reschedule work with drag-and-drop. No forms, no friction."
+      },
+      {
+        "icon": "🎯",
+        "title": "Theme Alignment",
+        "description": "Link product objectives to organizational strategic themes."
+      },
+      {
+        "icon": "📊",
+        "title": "Investment Planning",
+        "description": "Allocate resources (% or #) across strategic themes."
+      },
+      {
+        "icon": "⏰",
+        "title": "Flexible Timeboxes",
+        "description": "Quarters, releases, sprints, or custom intervals with date ranges."
+      },
+      {
+        "icon": "🔗",
+        "title": "Hierarchy Support",
+        "description": "Objectives → Epics → Features. Full parent-child relationships."
+      },
+      {
+        "icon": "👥",
+        "title": "Multi-Team",
+        "description": "Assign users and teams. Filter by owner, status, or team."
+      },
+      {
+        "icon": "🔄",
+        "title": "Real-Time Sync",
+        "description": "Live updates across all connected sessions and teams."
+      },
+      {
+        "icon": "📈",
+        "title": "Progress Tracking",
+        "description": "Status indicators, progress percentages, color-coded states."
+      },
+      {
+        "icon": "🔍",
+        "title": "Advanced Filtering",
+        "description": "Search by text, filter by owner, status, team, work item type."
+      },
+      {
+        "icon": "📤",
+        "title": "Export & Share",
+        "description": "Download as PDF or JPEG. Share roadmap views with stakeholders."
+      },
+      {
+        "icon": "🧪",
+        "title": "Strategy Integration",
+        "description": "Link to strategy board items, experiments, and validated learnings."
+      }
+    ]
+  },
+  "testimonials": {
+    "headline": "What Product Leaders Say",
+    "quotes": [
+      {
+        "quote": "For the first time, our board can see how all 8 product teams ladder up to our 3 strategic themes. No more manually creating slides every quarter.",
+        "author": "David Martinez",
+        "title": "CPO at ScaleUp Inc",
+        "avatar": "https://placehold.co/60x60/0ea5e9/ffffff?text=DM"
+      },
+      {
+        "quote": "We went from 'teams doing their own thing' to 'teams executing a coherent strategy' in 3 months. The two-level roadmap made alignment visible and actionable.",
+        "author": "Rachel Lee",
+        "title": "VP Product at TechCorp",
+        "avatar": "https://placehold.co/60x60/8b5cf6/ffffff?text=RL"
+      },
+      {
+        "quote": "Investment planning finally makes sense. We can see if we're actually allocating 40% to platform work or just saying we will. Data drives the conversation now.",
+        "author": "James Kim",
+        "title": "Chief Product Officer at PlatformCo",
+        "avatar": "https://placehold.co/60x60/f59e0b/ffffff?text=JK"
+      }
+    ]
+  },
+  "faq": {
+    "headline": "## Frequently Asked Questions",
+    "questions": [
+      {
+        "question": "### Do I have to use both organizational and product roadmaps?",
+        "answer": "No. You can start with just product roadmaps if you're a single-team company or early-stage startup. Add the organizational layer when you have multiple teams that need strategic alignment. The system works at either level independently.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### What if our organization doesn't think in \"themes\"?",
+        "answer": "Themes are flexible—call them strategic pillars, bets, focus areas, or anything that makes sense for your organization. The concept is simply \"what are the top-level categories we organize work around?\" Most organizations already have these, even if they're currently living in slide decks.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### How do intervals/timeboxes work?",
+        "answer": "You define intervals with start and end dates at the organizational level (e.g., Q1 2025: Jan 1 - Mar 31, Q2 2025: Apr 1 - Jun 30). Product roadmaps inherit these intervals. You can also create hierarchical intervals (e.g., quarters that contain sprints). Intervals are flexible—use whatever timeline structure your organization follows.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### Can we change the roadmap structure mid-year?",
+        "answer": "Absolutely. Roadmaps are living documents. Add/remove themes, adjust interval dates, move work items between timeboxes—all with drag-and-drop or simple edits. Changes sync in real-time. Your roadmap adapts as your strategy evolves.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### How does this integrate with our backlog?",
+        "answer": "The roadmap includes a collapsible backlog panel showing unscheduled (orphan) work items—epics, features, and objectives that aren't yet on the timeline. Drag items from the backlog onto intervals when you're ready to schedule them. Items automatically return to the backlog if removed from intervals.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### What's the difference between roadmap and strategy board?",
+        "answer": "Strategy Board is for validating what to build (objectives → opportunities → solutions → experiments). Roadmap is for scheduling when to build it (organizing validated work on a timeline). They integrate: validated strategy items flow into roadmap objectives. Think of Strategy Board as the 'why' and Roadmap as the 'when.'",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### Can external stakeholders view our roadmap?",
+        "answer": "Yes. You can share roadmap views with stakeholders. Export as PDF or JPEG for presentations. Control what's visible via filters (e.g., show only customer-facing work, hide internal platform items). Share links to specific theme or product roadmap views.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### How many product roadmaps can we have?",
+        "answer": "Unlimited. Each product, initiative, or team can have their own roadmap. All product roadmaps can align to the same organizational roadmap and themes. This lets each team plan independently while maintaining strategic alignment.",
+        "_formatting": {
+          "question": "h3"
+        }
+      }
+    ]
+  },
+  "final_cta": {
+    "headline": "Start Planning With Alignment",
+    "subheadline": "Stop juggling spreadsheets, slide decks, and disconnected tools. See your entire organization's roadmap on one timeline.",
+    "primary_cta": {
+      "text": "Start Free Trial",
+      "url": "#"
+    },
+    "secondary_cta": {
+      "text": "Book a Demo",
+      "url": "#"
+    },
+    "trust_signals": [
+      "No credit card required",
+      "14-day free trial",
+      "Setup in minutes",
+      "Cancel anytime"
+    ]
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Product",
+        "links": [
+          {
+            "text": "Strategy Board",
+            "url": "#"
+          },
+          {
+            "text": "Roadmap",
+            "url": "#"
+          },
+          {
+            "text": "Backlog",
+            "url": "#"
+          },
+          {
+            "text": "Integrations",
+            "url": "#"
+          },
+          {
+            "text": "Pricing",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          {
+            "text": "Documentation",
+            "url": "#"
+          },
+          {
+            "text": "Blog",
+            "url": "#"
+          },
+          {
+            "text": "Case Studies",
+            "url": "#"
+          },
+          {
+            "text": "Webinars",
+            "url": "#"
+          },
+          {
+            "text": "Templates",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          {
+            "text": "About Us",
+            "url": "#"
+          },
+          {
+            "text": "Careers",
+            "url": "#"
+          },
+          {
+            "text": "Contact",
+            "url": "#"
+          },
+          {
+            "text": "Partners",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          {
+            "text": "Privacy Policy",
+            "url": "#"
+          },
+          {
+            "text": "Terms of Service",
+            "url": "#"
+          },
+          {
+            "text": "Security",
+            "url": "#"
+          },
+          {
+            "text": "GDPR",
+            "url": "#"
+          }
+        ]
+      }
+    ],
+    "copyright": "© 2025 Covation Labs. All rights reserved."
+  },
+  "_seo_metadata": {
+    "base_query": "roadmap software",
+    "primary_keywords": [
+      "roadmap software",
+      "roadmap softwares"
+    ],
+    "secondary_keywords": [
+      "Roadmap software free",
+      "Roadmap software download",
+      "Best roadmap software",
+      "Best free roadmap tool",
+      "Product roadmap software",
+      "Roadmap tool Microsoft",
+      "Roadmap software engineer",
+      "Microsoft roadmap"
+    ],
+    "lsi_keywords": [
+      "Best free roadmap tool"
+    ],
+    "target_keyword_density": "1-2%",
+    "content_optimization_score": 0,
+    "formatting_guide": {
+      "h1": "# Heading 1",
+      "h2": "## Heading 2",
+      "h3": "### Heading 3",
+      "h4": "#### Heading 4",
+      "bold": "**bold text**",
+      "italic": "*italic text*",
+      "bold_italic": "***bold italic***",
+      "link": "[link text](url)",
+      "list_item": "- List item",
+      "numbered_list": "1. Numbered item"
+    }
+  },
+  "_structured_data_hints": {
+    "type": "SoftwareApplication",
+    "name": "Roadmap",
+    "description": "Two-level roadmap planning that connects organizational themes to product delivery. See how every team's work ladders up to company goals on one visual timeline.",
+    "keywords": "roadmap software, roadmap softwares, Roadmap software free, Roadmap software download, Best roadmap software, Best free roadmap tool, Product roadmap software",
+    "aggregateRating": {
+      "hint": "Add from actual customer reviews",
+      "ratingValue": "4.8",
+      "reviewCount": "127"
+    },
+    "offers": {
+      "hint": "Add pricing information",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+}
