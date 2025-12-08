@@ -24,6 +24,10 @@ import {
   GateLeadCaptureBlock,
   ChapterSectionBlock,
   TableOfContentsBlock,
+  // Special Blocks
+  AIEngineBlock,
+  CapabilityClustersBlock,
+  RootCauseBlock,
 } from '../blocks'
 import { seoFields } from '../fields'
 
@@ -71,6 +75,10 @@ export const Homepage: GlobalConfig = {
                 GateLeadCaptureBlock,
                 ChapterSectionBlock,
                 TableOfContentsBlock,
+                // Special Blocks
+                AIEngineBlock,
+                CapabilityClustersBlock,
+                RootCauseBlock,
               ],
               minRows: 1,
               admin: {

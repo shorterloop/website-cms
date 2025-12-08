@@ -1373,6 +1373,151 @@ export interface Homepage {
             blockName?: string | null;
             blockType: 'tableOfContents';
           }
+        | {
+            /**
+             * e.g., "Your Moat"
+             */
+            eyebrow?: string | null;
+            /**
+             * e.g., "Your Research Team, Always On"
+             */
+            headline: string;
+            /**
+             * What the AI does - one sentence
+             */
+            subheadline: string;
+            /**
+             * The synthesis story - focus on what humans couldn't do at scale
+             */
+            body: string;
+            /**
+             * What the AI enables (3-4 capabilities)
+             */
+            capabilities: {
+              title: string;
+              /**
+               * Outcome-focused, not feature-focused
+               */
+              description: string;
+              icon?: ('synthesis' | 'pattern' | 'signal' | 'insight' | 'automation' | 'speed') | null;
+              id?: string | null;
+            }[];
+            /**
+             * Screenshot or illustration showing AI in action
+             */
+            visual: number | Media;
+            /**
+             * Optional disclaimer about AI capabilities
+             */
+            disclaimer?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'aiEngine';
+          }
+        | {
+            /**
+             * e.g., "Everything You Need, Nothing You Don't"
+             */
+            headline: string;
+            /**
+             * e.g., "Three capabilities. One connected system."
+             */
+            subheadline?: string | null;
+            /**
+             * Exactly 3 clusters: Understand, Decide, Align
+             */
+            clusters: {
+              /**
+               * e.g., "Understand", "Decide", "Align"
+               */
+              name: string;
+              /**
+               * e.g., "Turn noise into signal"
+               */
+              tagline: string;
+              /**
+               * What you get, concretely
+               */
+              description: string;
+              icon: 'understand' | 'decide' | 'align' | 'discover' | 'analyze' | 'execute';
+              /**
+               * Specific features in this cluster (3-5)
+               */
+              features: {
+                /**
+                 * e.g., "Feedback Inbox", "Theme Detection"
+                 */
+                name: string;
+                id?: string | null;
+              }[];
+              /**
+               * Path to capability page
+               */
+              linkUrl: string;
+              /**
+               * e.g., "Explore →"
+               */
+              linkText: string;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'capabilityClusters';
+          }
+        | {
+            /**
+             * e.g., "It's Not a People Problem. It's a System Problem."
+             */
+            headline: string;
+            /**
+             * Why this is structural, not individual failure. Don't blame them — blame the system.
+             */
+            explanation: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            /**
+             * The missing pieces in the current system (2-4)
+             */
+            systemGaps: {
+              /**
+               * What's missing, e.g., "No single source of truth for feedback"
+               */
+              gap: string;
+              /**
+               * What happens because of this gap
+               */
+              consequence: string;
+              icon?: ('broken' | 'missing' | 'disconnect' | 'chaos' | 'blind_spot' | 'fragmented') | null;
+              id?: string | null;
+            }[];
+            /**
+             * The "aha" moment insight that shifts perspective. e.g., "You don't have a prioritization problem. You have an evidence problem."
+             */
+            reframe: string;
+            /**
+             * Optional word to emphasize in the reframe
+             */
+            reframeHighlight?: string | null;
+            /**
+             * Optional diagram showing the system gap
+             */
+            visual?: (number | null) | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'rootCause';
+          }
       )[]
     | null;
   /**
@@ -1871,6 +2016,70 @@ export interface HomepageSelect<T extends boolean = true> {
                     id?: T;
                   };
               hideOnMobile?: T;
+              id?: T;
+              blockName?: T;
+            };
+        aiEngine?:
+          | T
+          | {
+              eyebrow?: T;
+              headline?: T;
+              subheadline?: T;
+              body?: T;
+              capabilities?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              visual?: T;
+              disclaimer?: T;
+              id?: T;
+              blockName?: T;
+            };
+        capabilityClusters?:
+          | T
+          | {
+              headline?: T;
+              subheadline?: T;
+              clusters?:
+                | T
+                | {
+                    name?: T;
+                    tagline?: T;
+                    description?: T;
+                    icon?: T;
+                    features?:
+                      | T
+                      | {
+                          name?: T;
+                          id?: T;
+                        };
+                    linkUrl?: T;
+                    linkText?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        rootCause?:
+          | T
+          | {
+              headline?: T;
+              explanation?: T;
+              systemGaps?:
+                | T
+                | {
+                    gap?: T;
+                    consequence?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              reframe?: T;
+              reframeHighlight?: T;
+              visual?: T;
               id?: T;
               blockName?: T;
             };
