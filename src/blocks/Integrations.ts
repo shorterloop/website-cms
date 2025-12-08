@@ -124,7 +124,6 @@ export const IntegrationsBlock: Block = {
               type: 'upload',
               relationTo: 'media',
               label: 'Logo',
-              required: true,
             },
             {
               name: 'description',
