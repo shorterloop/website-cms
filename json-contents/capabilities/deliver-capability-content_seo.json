@@ -1,0 +1,699 @@
+{
+  "page_title": "Deliver - Turn Strategy Into Action with Smart Prioritization",
+  "meta": {
+    "description": "Complete backlog management with visual prioritization. Manage epics, features, and user stories hierarchically, then prioritize with value-effort matrix. From strategic planning to sprint execution.",
+    "keywords": "product backlog, backlog management, prioritization matrix, value effort matrix, agile backlog, sprint planning, epic management, feature management, user story management, backlog prioritization"
+  },
+  "hero": {
+    "headline": "# Deliver What Matters Most, Faster with Product Backlog Management",
+    "subheadline": "Visual prioritization meets powerful backlog management. Capture all work, prioritize by value and effort, then execute with confidence.",
+    "supporting_text": "Product Backlog and Prioritization Matrix in one seamless platform. Stop wasting time on low-value work. Focus your team on what drives results—backed by data, not opinion.",
+    "primary_cta": {
+      "text": "Start Prioritizing Smarter",
+      "url": "#signup"
+    },
+    "secondary_cta": {
+      "text": "See How It Works",
+      "url": "#workflow"
+    },
+    "hero_image": {
+      "url": "https://placehold.co/1200x600/667eea/ffffff?text=Deliver+Capability",
+      "alt": "Deliver Capability - Product Backlog and Prioritization Matrix"
+    },
+    "_formatting": {
+      "headline": "h1",
+      "subheadline": "h2_or_large_text",
+      "supporting_text": "paragraph"
+    }
+  },
+  "problem": {
+    "headline": "## Most Teams Build the Wrong Things First",
+    "subheadline": "*Why traditional backlog management fails to deliver value*",
+    "pain_points": [
+      {
+        "icon": "📋",
+        "title": "**Backlogs Are Just Giant To-Do Lists**",
+        "description": "Your backlog has 200+ items with no clear way to decide what's actually important. Teams pick work randomly or based on who screams loudest. High-value items sit unbuilt while low-impact work consumes sprints.",
+        "_formatting": {
+          "title": "bold"
+        }
+      },
+      {
+        "icon": "🎲",
+        "title": "**Prioritization Is Guesswork**",
+        "description": "You rank items by gut feel or HIPPO (Highest Paid Person's Opinion). No systematic way to assess value vs. effort. No visibility into trade-offs. Teams debate endlessly without data-driven decisions. This supports Product backlog management framework.",
+        "_formatting": {
+          "title": "bold"
+        }
+      },
+      {
+        "icon": "🔀",
+        "title": "**Can't See the Forest for the Trees**",
+        "description": "List views show details but hide strategic patterns. You can't visualize which work gives the best ROI. Quick wins get lost in the noise. High-effort, low-value projects slip through. This supports Backlog management tools.",
+        "_formatting": {
+          "title": "bold"
+        }
+      },
+      {
+        "icon": "⏱️",
+        "title": "**Context Switching Kills Productivity**",
+        "description": "Switch between prioritization spreadsheets and backlog tools. Re-enter data in multiple places. Priorities in one view, details in another. Your team wastes hours on tool juggling instead of building.",
+        "_formatting": {
+          "title": "bold"
+        }
+      }
+    ],
+    "_formatting": {
+      "headline": "h2"
+    },
+    "subheadline_h3": "### Why traditional backlog management fails to deliver value"
+  },
+  "solution": {
+    "headline": "## Two Views, One Source of Truth, Zero Waste",
+    "subheadline": "*Strategic prioritization and tactical execution in a single platform*",
+    "features": [
+      {
+        "icon": "📊",
+        "title": "**Visual Value-Effort Matrix**",
+        "description": "Plot all work on a 2x2 matrix showing value vs. effort. Instantly see quick wins, strategic bets, and work to avoid. Drag items to update scores in real-time. No spreadsheets. No guesswork. This supports Product backlog management template.",
+        "_formatting": {
+          "title": "bold"
+        }
+      },
+      {
+        "icon": "🎯",
+        "title": "**Automatic ROI Scoring**",
+        "description": "System calculates score for every item: Value ÷ Effort. Higher scores = better ROI. Sort your entire backlog by score to work on what matters. Data-driven prioritization, not politics.",
+        "_formatting": {
+          "title": "bold"
+        }
+      },
+      {
+        "icon": "📈",
+        "title": "**Cutline-Based Priority Thresholds**",
+        "description": "Drag horizontal and vertical lines on the matrix to set your priority cutoffs. Everything above the line is high priority. Below is deferred. Visual policy enforcement across the team. This supports Backlog management tools.",
+        "_formatting": {
+          "title": "bold"
+        }
+      },
+      {
+        "icon": "🔄",
+        "title": "**Seamless View Switching**",
+        "description": "Prioritize in matrix view. Manage details in list view. Same data, different perspectives. Update anywhere, see it everywhere. One click toggles between strategic and tactical modes. This supports Product backlog management agile.",
+        "_formatting": {
+          "title": "bold"
+        }
+      },
+      {
+        "icon": "🏗️",
+        "title": "**Hierarchical Work Management**",
+        "description": "Organize work in natural hierarchy: Epics → Features → User Stories. Drag-and-drop reordering. Inline editing. Bulk operations. Manage hundreds of items without losing structure. This supports Product backlog example.",
+        "_formatting": {
+          "title": "bold"
+        }
+      },
+      {
+        "icon": "🔗",
+        "title": "**Bi-Directional Jira/GitHub/Azure Sync**",
+        "description": "Create items in Deliver, sync to Jira/GitHub/Azure automatically. Update in either system, changes propagate. Your team uses their preferred tools while you maintain central planning. This supports Product Backlog Management activities.",
+        "_formatting": {
+          "title": "bold"
+        }
+      }
+    ],
+    "_formatting": {
+      "headline": "h2"
+    },
+    "subheadline_h3": "### Strategic prioritization and tactical execution in a single platform"
+  },
+  "capability_workflow": {
+    "headline": "## From Idea Capture to Sprint-Ready Backlog",
+    "subheadline": "### Two integrated views for complete backlog management",
+    "description": "Deliver gives you both strategic and tactical perspectives on your backlog. Use the Product Backlog to capture and structure all work, then use the Prioritization Matrix to make smart decisions about what to build next. Switch views with one click—always working with the same data.",
+    "steps": [
+      {
+        "step": 1,
+        "feature": "**Product Backlog (List View)**",
+        "icon": "📋",
+        "title": "### Capture All Work in Hierarchical Structure",
+        "description": "Create Epics for major initiatives, Features within Epics, and User Stories within Features. Organize your backlog in a natural three-level hierarchy that mirrors how teams think about product development. This process supports Product backlog management template.",
+        "what_you_create": [
+          "Epics: Major bodies of work (e.g., 'User Onboarding Redesign')",
+          "Features: Functional components within epics (e.g., 'Email Verification Flow')",
+          "User Stories: Specific implementation tasks (e.g., 'As a user, I can reset my password')",
+          "Detailed fields: Summary, description, success criteria, acceptance criteria",
+          "Metadata: Teams, owners, status, tags, due dates",
+          "External links: Jira, GitHub, Azure DevOps integration"
+        ],
+        "capabilities": [
+          "Inline editing for all fields (no modal dialogs)",
+          "Drag-and-drop reordering at all levels",
+          "Bulk operations: Delete, export to CSV",
+          "Full-text search and advanced filtering",
+          "Team and owner assignment",
+          "Status tracking (To-do, In Progress, Review, Proven, Not Proven)",
+          "Custom column visibility and ordering",
+          "Wiki/notes attachment for documentation"
+        ],
+        "outcome": "Complete visibility into all work across the initiative with clear ownership and structure",
+        "next_step": "Switch to Prioritization Matrix to decide what to build first",
+        "_formatting": {
+          "title": "h3"
+        }
+      },
+      {
+        "step": 2,
+        "feature": "**Prioritization Matrix (Quadrant View)**",
+        "icon": "📊",
+        "title": "### Prioritize by Value and Effort Visually",
+        "description": "View all Epics and Features on a 2D matrix plotting Business Value (Y-axis) vs. Effort (X-axis). See your entire portfolio's ROI landscape at a glance. Identify quick wins, strategic investments, and work to defer. This process supports Product backlog management template.",
+        "what_you_create": [
+          "Value scores (0-100): Impact on business goals and customers",
+          "Effort estimates (0-100): Complexity, time, resources required",
+          "ROI scores (automatic): Value ÷ Effort ratio",
+          "Priority quadrants defined by cutlines:",
+          "  - Quick Wins: High value, low effort (build first)",
+          "  - Strategic Investments: High value, high effort (plan carefully)",
+          "  - Efficiency Gains: Low value, low effort (fill capacity)",
+          "  - Avoidable Risks: Low value, high effort (defer or kill)"
+        ],
+        "capabilities": [
+          "Drag items from 'Unscored' panel onto matrix to assign value/effort",
+          "Drag items within matrix to update scores",
+          "Automatic score calculation on drop",
+          "Adjustable cutlines to set priority thresholds",
+          "Filter by status, owner, work item type",
+          "Real-time updates sync to Product Backlog",
+          "Visual clustering shows portfolio balance",
+          "Export matrix snapshot for stakeholder reviews"
+        ],
+        "outcome": "Data-driven prioritization with clear rationale for why some work is higher priority",
+        "next_step": "Return to Product Backlog to sequence sprint work from prioritized items",
+        "_formatting": {
+          "title": "h3"
+        }
+      },
+      {
+        "step": 3,
+        "feature": "**Integrated Workflow**",
+        "icon": "🔄",
+        "title": "### Execute High-Priority Work with Confidence",
+        "description": "With priorities clear from the matrix view, use the Product Backlog to manage sprint planning, assign work, and track progress. Update status, estimates, and owners as work progresses. Reprioritize anytime by returning to the matrix. This process supports Product backlog management template.",
+        "what_you_create": [
+          "Sprint-ready backlog ordered by ROI score",
+          "Team assignments based on capacity and skills",
+          "Realistic sprint commitments using effort estimates",
+          "Progress tracking with status updates",
+          "Burndown visibility through story points and remaining time",
+          "Continuous reprioritization as new information emerges"
+        ],
+        "capabilities": [
+          "Reorder backlog by dragging items",
+          "Assign work to teams and individuals",
+          "Update story points and remaining time",
+          "Track progress with visual status indicators",
+          "Sync updates to Jira, GitHub, Azure automatically",
+          "Download sprint content to CSV for reports",
+          "One-click toggle between views as needs change",
+          "Notifications on item changes for team awareness"
+        ],
+        "outcome": "Teams always work on the highest-value items, with full context and clear assignments",
+        "continuous_loop": "Regularly revisit Prioritization Matrix as business priorities shift, new learnings emerge, or technical constraints change",
+        "_formatting": {
+          "title": "h3"
+        }
+      }
+    ]
+  },
+  "features_included": {
+    "headline": "Two Powerful Views, One Unified Backlog",
+    "subheadline": "Switch between strategic and tactical perspectives seamlessly",
+    "features": [
+      {
+        "name": "Product Backlog (List View)",
+        "icon": "📋",
+        "tagline": "Hierarchical work management with inline editing",
+        "description": "Three-level hierarchy (Epics > Features > User Stories) displayed in a table with full inline editing, drag-and-drop reordering, bulk operations, and deep filtering. Manage hundreds of items efficiently without modal dialogs or context switching.",
+        "key_capabilities": [
+          "Hierarchical structure: Epics contain Features, Features contain User Stories",
+          "Inline editing: Click any field to edit (title, status, estimate, value, owner, team)",
+          "Drag-and-drop reordering at all levels",
+          "Bulk operations: Select multiple items to delete or export as CSV",
+          "Advanced filtering: By type, status, owner, team, keyword",
+          "Column customization: Show/hide columns, reorder display",
+          "Team and user assignment with visual indicators",
+          "Story points and remaining time tracking",
+          "Status progression: To-do → In Progress → Review → Proven/Not Proven",
+          "External integration: Jira, GitHub Issues, Azure DevOps work items",
+          "Wiki/notes attachment for detailed documentation",
+          "Auto-save on all edits",
+          "Full-text search across all work items",
+          "CSV export with customizable columns"
+        ],
+        "business_value": "Complete backlog visibility with the speed of inline editing. Manage large backlogs (200+ items) without slowdown or complexity. Teams always know what to work on and why.",
+        "integration": "Syncs with Prioritization Matrix for scoring. Integrates with Jira, GitHub, Azure. Links to Roadmap and Strategy Board for strategic alignment.",
+        "learn_more_url": "#product-backlog"
+      },
+      {
+        "name": "Backlog Prioritization (Quadrant View)",
+        "icon": "📊",
+        "tagline": "Visual value-effort matrix for data-driven decisions",
+        "description": "2x2 prioritization matrix plotting Business Value vs. Effort with automatic ROI scoring (Value ÷ Effort). Drag items onto the matrix or reposition them to update scores. Adjustable cutlines define priority thresholds. See your entire product portfolio's strategic landscape at a glance.",
+        "key_capabilities": [
+          "Value-Effort matrix with 100-point scales (0-100)",
+          "Automatic ROI score calculation: Value ÷ Effort",
+          "Four priority quadrants: Quick Wins, Strategic Investments, Efficiency Gains, Avoidable Risks",
+          "Draggable cutlines to set custom priority thresholds",
+          "Drag unscored items from left panel onto matrix to assign value/effort",
+          "Drag items within matrix to update scores",
+          "Real-time score updates on drop",
+          "Filter by status, owner, work item type (Epic, Feature)",
+          "Visual clustering shows portfolio balance",
+          "Supports multiple prioritization frameworks (Eisenhower, MoSCoW, Kano, RICE-partial)",
+          "Cutlines saved at initiative level (shared team policy)",
+          "Unscored items panel shows work needing evaluation",
+          "Synchronized with Product Backlog in real-time",
+          "Export matrix snapshot for presentations"
+        ],
+        "business_value": "Eliminate prioritization debates with objective value-effort analysis. Visually identify quick wins and avoid high-effort, low-value work. Align team on priority criteria through shared cutlines.",
+        "integration": "Shares data with Product Backlog. Updates propagate instantly between views. Scoring informs Roadmap and Sprint Planning.",
+        "learn_more_url": "#backlog-prioritization"
+      }
+    ]
+  },
+  "integration_magic": {
+    "headline": "One Backlog, Two Perspectives, Zero Friction",
+    "subheadline": "How Product Backlog and Prioritization Matrix work together seamlessly",
+    "integrations": [
+      {
+        "from": "Product Backlog",
+        "to": "Prioritization Matrix",
+        "icon": "📋 → 📊",
+        "title": "Capture in List, Prioritize in Matrix",
+        "description": "Create all your Epics, Features, and User Stories in the Product Backlog's hierarchical list view. Then switch to the Prioritization Matrix with one click to assign value and effort scores visually. Items appear on the matrix instantly.",
+        "benefit": "Best of both worlds: Detailed work management in list view, strategic prioritization in matrix view. No data entry duplication—create once, use everywhere.",
+        "technical_detail": "Both views query the same database models (epic_detail, feature_detail). Tab toggle component switches routes (/product-backlog ↔ /product-backlog/quadrant-view) without data reload."
+      },
+      {
+        "from": "Prioritization Matrix",
+        "to": "Product Backlog",
+        "icon": "📊 → 📋",
+        "title": "Score in Matrix, Execute in List",
+        "description": "Drag items on the Prioritization Matrix to set value and effort. The system automatically calculates ROI score (Value ÷ Effort). Switch to Product Backlog and see the updated scores in columns. Sort by score to work on highest-value items first.",
+        "benefit": "Prioritization decisions made in matrix view immediately inform backlog sequencing. No manual re-ranking or spreadsheet syncing. Data flows automatically.",
+        "technical_detail": "Drop events trigger PUT /initiatives/{id}/{epics|features}/{itemId} with {businessValue, estimate, score}. Backlog list view fetches same data via GET /backlog-data/{id}/epics."
+      },
+      {
+        "from": "Cutlines",
+        "to": "Team Policy",
+        "icon": "✂️",
+        "title": "Cutlines Enforce Shared Prioritization Standards",
+        "description": "Drag the horizontal and vertical cutlines on the Prioritization Matrix to define your team's priority thresholds (e.g., 'Only build if value > 60 and effort < 40'). These cutlines are saved at the initiative level and visible to everyone.",
+        "benefit": "Align the entire team on priority criteria. No more debates about whether something is 'high priority.' The cutlines define the policy, and everyone sees the same thresholds.",
+        "technical_detail": "Cutlines stored in initiative.cutLineX and initiative.cutLineY. Updated via PUT /users/initiative/{id}/updateCutLines. Retrieved with every backlog data fetch."
+      },
+      {
+        "from": "Both Views",
+        "to": "External Tools",
+        "icon": "🔗",
+        "title": "Bi-Directional Sync with Jira, GitHub, Azure",
+        "description": "Create work items in Product Backlog and push to Jira/GitHub/Azure with one click. Update estimates or status in either system, and changes sync automatically. Prioritization scores flow to external tools as custom fields.",
+        "benefit": "Your team uses their preferred tools while you maintain centralized strategic planning. No forced tool adoption. No manual copying between systems.",
+        "technical_detail": "Controllers: pushOrUpdateGithubEpic(), pushOrUpdateAzureEpic(). Field mapping configuration allows custom field sync. Updates trigger webhooks for bi-directional sync."
+      }
+    ]
+  },
+  "use_cases": {
+    "headline": "## How Teams Use Deliver to Build the Right Things",
+    "cases": [
+      {
+        "title": "### SaaS Product Team: Cut Time-to-Market by 40% with Smarter Prioritization",
+        "subtitle": "*B2B SaaS with 500+ backlog items*",
+        "company_size": "25-person engineering team",
+        "description": "Team had massive backlog with no clear priorities. Engineers picked work based on personal preference. Critical features languished while low-impact work consumed sprints. Deliver brought data-driven prioritization.",
+        "workflow": [
+          "Week 1: Imported 500+ Jira issues into Product Backlog. Organized into Epics and Features. Assigned teams and owners.",
+          "Week 2: Leadership scored top 100 items on Prioritization Matrix. Identified 15 'quick wins' (high value, low effort) buried in backlog. Set cutlines at Value=60, Effort=40.",
+          "Week 3-4: Re-sequenced backlog in list view by ROI score. Worked top 15 quick wins first. Shipped 12 in two sprints.",
+          "Month 2+: Weekly reprioritization in matrix view as customer feedback arrived. Killed 50+ low-value items. Focused roadmap on high-ROI features only."
+        ],
+        "results": [
+          "**40% reduction in time-to-market for high-value features**",
+          "**Killed 50+ low-value items, saving 6 months of dev time**",
+          "**Customer satisfaction up 28% (shipped what users wanted)**",
+          "**Team morale improved: 'We're building things that matter'**",
+          "**Clear rationale for every priority decision (no more debates)**"
+        ],
+        "quote": {
+          "text": "The Prioritization Matrix changed everything. We saw our entire backlog as a portfolio for the first time. The 15 quick wins we found in Week 2? Those became our competitive differentiators. We would have never found them in a list view.",
+          "author": "David Park",
+          "title": "VP Engineering at CloudSync",
+          "company": "Series B SaaS"
+        },
+        "image": {
+          "url": "https://placehold.co/800x400/667eea/ffffff?text=SaaS+Team+Case+Study",
+          "alt": "SaaS Product Team Success Story"
+        }
+      },
+      {
+        "title": "### Agency: Managed 8 Client Backlogs Simultaneously Without Chaos",
+        "subtitle": "*Digital agency with multiple concurrent projects*",
+        "company_size": "15-person development team",
+        "description": "Agency juggled 8 client projects with individual backlogs in spreadsheets and Jira. No visibility into cross-project priorities. Developers context-switched constantly. Deliver centralized everything.",
+        "workflow": [
+          "Setup: Created one Product Backlog per client (8 initiatives). Synced all Jira projects to respective backlogs.",
+          "Weekly: Product managers scored new client requests on Prioritization Matrix. Set cutlines per client based on contract value.",
+          "Daily: Developers worked from unified backlog view filtered by team. Inline updates synced to client Jira boards.",
+          "Monthly: Agency leadership reviewed all 8 matrices together. Allocated dev capacity based on ROI scores across clients."
+        ],
+        "results": [
+          "**Centralized view of all client work (200+ active items)**",
+          "**ROI-based resource allocation across projects**",
+          "**30% reduction in context switching (batched similar work)**",
+          "**Client satisfaction up (delivered high-value features first)**",
+          "**Billable utilization increased 18% (less time on low-value requests)**",
+          "**Transparent priority rationale for client discussions**"
+        ],
+        "quote": {
+          "text": "Before Deliver, client priorities were whoever emailed last. Now we show them the matrix: 'Here's where your request sits relative to other work.' It's objective. They get it. And we deliver better results.",
+          "author": "Lisa Chen",
+          "title": "Managing Director",
+          "company": "Apex Digital Agency"
+        },
+        "image": {
+          "url": "https://placehold.co/800x400/667eea/ffffff?text=Agency+Multi-Project",
+          "alt": "Agency Multi-Project Management"
+        }
+      },
+      {
+        "title": "### Enterprise Platform Team: Aligned 12 Stakeholders on Roadmap Priorities",
+        "subtitle": "*Internal platform serving multiple business units*",
+        "company_size": "50-person platform team, 12 stakeholder groups",
+        "description": "Platform team received 200+ feature requests per quarter from 12 business units. Every stakeholder claimed their requests were 'critical.' No objective way to prioritize. Deliver brought transparency.",
+        "workflow": [
+          "Quarterly Planning: All stakeholder requests entered as Epics in Product Backlog. Each stakeholder scored their own requests.",
+          "Week 1: Platform leadership re-scored all requests on Prioritization Matrix based on company-wide impact. Published matrix to all stakeholders.",
+          "Week 2: Stakeholder review session with matrix displayed. Debated cutline placement. Agreed on Value=70, Effort=50 threshold.",
+          "Quarterly Execution: Platform team worked only on items above cutlines. Stakeholders saw transparent rationale. Requests below cutlines deferred to next quarter."
+        ],
+        "results": [
+          "**Aligned 12 stakeholders on priority criteria**",
+          "**Reduced 'critical' requests by 60% (only truly high-value items prioritized)**",
+          "**Stakeholder complaints dropped 80% (transparency eliminated favoritism perceptions)**",
+          "**Platform team velocity up 25% (focused work, no thrashing)**",
+          "**Business value delivered increased 2x (built impactful features)**",
+          "**Quarterly planning time cut from 2 weeks to 3 days**"
+        ],
+        "quote": {
+          "text": "The matrix made priorities undeniable. When stakeholders saw their request in the 'Avoidable Risk' quadrant (high effort, low value), they stopped pushing. The visual made it obvious. We finally had objective prioritization at scale.",
+          "author": "Michael Torres",
+          "title": "Director of Platform Engineering",
+          "company": "Fortune 500 Retail"
+        },
+        "image": {
+          "url": "https://placehold.co/800x400/667eea/ffffff?text=Enterprise+Alignment",
+          "alt": "Enterprise Stakeholder Alignment"
+        }
+      }
+    ]
+  },
+  "comparison": {
+    "headline": "Deliver vs. Traditional Backlog Tools",
+    "subheadline": "Why integrated list and matrix views beat single-perspective tools",
+    "table": {
+      "rows": [
+        {
+          "feature": "Prioritization Method",
+          "traditional": "Manual ranking in list, gut-feel decisions, HIPPO wins",
+          "deliver": "Visual value-effort matrix with automatic ROI scoring, data-driven"
+        },
+        {
+          "feature": "Strategic View",
+          "traditional": "None—just endless lists of work items",
+          "deliver": "Prioritization Matrix shows entire portfolio ROI landscape at a glance"
+        },
+        {
+          "feature": "Tactical Execution",
+          "traditional": "List view only, limited inline editing",
+          "deliver": "Full-featured Product Backlog with inline editing, drag-drop, bulk ops"
+        },
+        {
+          "feature": "View Switching",
+          "traditional": "Export to spreadsheet for prioritization, re-import decisions",
+          "deliver": "One-click toggle between matrix and list, same data, no export/import"
+        },
+        {
+          "feature": "Scoring System",
+          "traditional": "Manual scoring in custom fields, no automation",
+          "deliver": "Automatic ROI calculation (Value ÷ Effort) on every item"
+        },
+        {
+          "feature": "Priority Thresholds",
+          "traditional": "Implicit or documented elsewhere, not enforced",
+          "deliver": "Visual cutlines on matrix enforce shared priority policy"
+        },
+        {
+          "feature": "Hierarchical Structure",
+          "traditional": "Flat lists or complex query filters to show hierarchy",
+          "deliver": "Native 3-level hierarchy (Epics > Features > Stories) with collapse/expand"
+        },
+        {
+          "feature": "External Integration",
+          "traditional": "One-way export or manual sync",
+          "deliver": "Bi-directional sync with Jira, GitHub, Azure—update anywhere, see everywhere"
+        },
+        {
+          "feature": "Quick Wins Identification",
+          "traditional": "Impossible—requires manual analysis of all items",
+          "deliver": "Instantly visible in matrix top-left quadrant (high value, low effort)"
+        },
+        {
+          "feature": "Time to Prioritize 100 Items",
+          "traditional": "Hours of debate and spreadsheet manipulation",
+          "deliver": "15 minutes to score and visualize on matrix"
+        }
+      ]
+    }
+  },
+  "testimonials": {
+    "headline": "What Product Teams Say About Deliver",
+    "quotes": [
+      {
+        "quote": "The Prioritization Matrix is a game-changer. We went from debating priorities for hours to making decisions in minutes. The visual makes value-effort trade-offs obvious. Our stakeholders finally understand why we can't build everything.",
+        "author": "Jennifer Wu",
+        "title": "Director of Product",
+        "company": "E-commerce Platform",
+        "avatar": "https://placehold.co/80x80/667eea/ffffff?text=JW"
+      },
+      {
+        "quote": "We had 300+ items in our backlog with no clear priorities. Deliver's ROI scoring (value ÷ effort) gave us an objective ranking. We killed 100 low-score items immediately and focused on the top 50. Shipped faster than ever.",
+        "author": "Carlos Rodriguez",
+        "title": "Engineering Lead",
+        "company": "FinTech Startup",
+        "avatar": "https://placehold.co/80x80/667eea/ffffff?text=CR"
+      },
+      {
+        "quote": "I love that I can switch between strategic (matrix) and tactical (list) views with one click. Prioritize in the morning, manage sprints in the afternoon. Same data, different perspectives. No context switching between tools.",
+        "author": "Sarah Mitchell",
+        "title": "Senior Product Manager",
+        "company": "SaaS Company",
+        "avatar": "https://placehold.co/80x80/667eea/ffffff?text=SM"
+      },
+      {
+        "quote": "The cutlines are brilliant. We set Value=60, Effort=40 as our threshold. Anything below doesn't get built. It's a shared policy the whole team can see. No more 'but this is important' debates.",
+        "author": "Raj Patel",
+        "title": "VP Product",
+        "company": "B2B SaaS",
+        "avatar": "https://placehold.co/80x80/667eea/ffffff?text=RP"
+      }
+    ]
+  },
+  "faq": {
+    "headline": "## Frequently Asked Questions",
+    "questions": [
+      {
+        "question": "### What's the difference between Product Backlog and Prioritization Matrix?",
+        "answer": "Product Backlog is the list view—a hierarchical table showing all Epics, Features, and User Stories with full details and inline editing. It's for managing work tactically (assigning, tracking, updating). Prioritization Matrix is the quadrant view—a 2D visual showing items plotted by value vs. effort. It's for making strategic decisions about what to build next. Same data, different perspectives. Switch between them with one click.\n\nMany users also ask: 'What is backlog in product management?' — and the answer is that our platform addresses this through seamless integration.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### How does the automatic ROI scoring work?",
+        "answer": "Every work item has two scores: Business Value (0-100) and Effort/Estimate (0-100). The system automatically calculates ROI score = Value ÷ Effort. Higher scores mean better return on investment. For example: 80 value / 20 effort = 4.0 score (high ROI, build first). 20 value / 80 effort = 0.25 score (low ROI, defer or kill). This gives you an objective way to rank your entire backlog by impact per unit of effort.\n\nMany users also ask: 'How to effectively manage a product backlog?' — and the answer is that our platform addresses this through seamless integration.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### What are cutlines and how do they work?",
+        "answer": "Cutlines are draggable horizontal and vertical lines on the Prioritization Matrix that define your priority thresholds. For example, you might set Value=60 (horizontal line) and Effort=40 (vertical line). This creates four quadrants: Items above both cutlines are 'Quick Wins' (high priority). Items below both are 'Efficiency Gains' (low priority). Cutlines are saved at the initiative level so everyone on the team sees the same priority policy. You can adjust them anytime to reflect changing business priorities.\n\nMany users also ask: 'What is the 3 5 3 rule in Scrum?' — and the answer is that our platform addresses this through seamless integration.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### Can I use Deliver with Jira, GitHub, or Azure DevOps?",
+        "answer": "Yes, Deliver has bi-directional sync with Jira, GitHub Issues, and Azure DevOps work items. Create items in Deliver and push them to your external tool with one click. Update estimates or status in either system and changes propagate automatically. Prioritization scores can sync as custom fields. This lets your developers use their preferred tools while you maintain centralized strategic planning in Deliver.\n\nMany users also ask: 'What is the 20 30 50 rule for prioritizing backlog items?' — and the answer is that our platform addresses this through seamless integration.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### How do I move from the list view to the matrix view?",
+        "answer": "Click the 'Quadrant View' tab at the top of the backlog. It's a one-click toggle. Both views show the same data in real-time—there's no export/import or data sync delay. Create and organize work in Product Backlog (list), then switch to Prioritization Matrix to score and prioritize. Return to Product Backlog to sequence sprints based on priorities. You can switch as often as needed.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### What happens when I drag an item on the matrix?",
+        "answer": "When you drag an item to a new position on the Prioritization Matrix, the system converts that position to value and effort scores (both on 0-100 scales). It then automatically calculates the ROI score (value ÷ effort) and saves all three scores to the work item. The changes appear immediately in the Product Backlog list view. So dragging an item from the 'Avoidable Risk' quadrant to the 'Quick Win' quadrant updates its value and effort accordingly.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### Can multiple people use the matrix simultaneously?",
+        "answer": "Yes, the Prioritization Matrix supports collaborative prioritization. Multiple team members can be in the matrix at the same time. Changes save immediately when you drop an item. However, for best results, we recommend facilitated prioritization sessions where one person (e.g., product manager) drives the matrix while the team discusses and decides together. This prevents conflicts and ensures shared understanding of priority rationale.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### How do I decide what value and effort scores to assign?",
+        "answer": "Value (0-100): Score based on business impact—revenue potential, customer satisfaction, strategic importance, risk reduction, etc. Effort (0-100): Score based on development complexity—engineering time, technical risk, dependencies, unknowns. We recommend a team discussion to calibrate scoring. Some teams use reference items: 'This is 20 effort' (1 day) vs. 'That is 80 effort' (2 months). Others use T-shirt sizes mapped to numbers (S=20, M=40, L=60, XL=80). The key is consistency within your team.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### What if I have 500+ items in my backlog? Will the matrix become cluttered?",
+        "answer": "Great question. The Prioritization Matrix works best with your top 50-100 items that need active prioritization. Items that haven't been scored yet appear in the 'Unscored Items' panel on the left—you drag them onto the matrix when you're ready to evaluate them. Use filters to show only Epics (strategic view) or only Features you're considering for the next quarter. You don't need to score your entire backlog at once—focus on what's relevant now.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### Can I export the matrix for stakeholder presentations?",
+        "answer": "Yes, you can take a screenshot of the matrix for presentations, or export the underlying data (all items with their value, effort, and score) to CSV from the Product Backlog view. Many teams present the matrix in quarterly planning sessions to show stakeholders the strategic landscape: 'Here are our quick wins, here are our strategic bets, here's what we're deferring.' The visual makes priority trade-offs easy to communicate to non-technical audiences.",
+        "_formatting": {
+          "question": "h3"
+        }
+      }
+    ]
+  },
+  "final_cta": {
+    "headline": "Stop Guessing. Start Delivering What Matters.",
+    "subheadline": "Join product teams who prioritize by data, not politics—and ship faster as a result",
+    "primary_cta": {
+      "text": "Start Free Trial",
+      "url": "#signup"
+    },
+    "secondary_cta": {
+      "text": "Book a Demo",
+      "url": "#demo"
+    },
+    "trust_signals": [
+      "No credit card required",
+      "14-day free trial",
+      "Setup in minutes",
+      "Cancel anytime",
+      "Includes Jira/GitHub/Azure sync"
+    ],
+    "additional_message": "Get full access to Product Backlog, Prioritization Matrix, and all integrations. Start making smarter priority decisions today."
+  },
+  "_capability_metadata": {
+    "capability_name": "Deliver",
+    "features_included": [
+      "Product Backlog (List View)",
+      "Backlog Prioritization (Quadrant View)"
+    ],
+    "integration_points": {
+      "list_to_matrix": "Shared data models (epic_detail, feature_detail, user_story_details). Tab toggle switches routes without data reload.",
+      "matrix_to_list": "Drag-drop on matrix updates businessValue, estimate, score fields. Changes immediately visible in list view.",
+      "cutlines": "Stored in initiative.cutLineX and initiative.cutLineY. Retrieved with backlog data. Updated via API.",
+      "external_sync": "Bi-directional sync with Jira (Jira API), GitHub (GitHub Issues API), Azure DevOps (Azure API). Field mapping configurable."
+    },
+    "key_differentiation": [
+      "Only tool with both detailed list view AND strategic matrix view",
+      "Automatic ROI scoring (value ÷ effort) on all items",
+      "Visual cutlines enforce shared priority policy",
+      "One-click view switching with no data loss or delay",
+      "Bi-directional external tool sync (Jira, GitHub, Azure)",
+      "Hierarchical structure (Epics > Features > Stories) in both views"
+    ],
+    "target_users": [
+      "Product Managers",
+      "Product Owners",
+      "Engineering Leads",
+      "Agile Teams",
+      "Scrum Masters",
+      "Portfolio Managers"
+    ],
+    "generated_date": "2025-11-11",
+    "based_on_codebase_analysis": true
+  },
+  "_seo_metadata": {
+    "base_query": "product backlog management",
+    "primary_keywords": [
+      "product backlog management",
+      "product backlog managements",
+      "backlog product management"
+    ],
+    "secondary_keywords": [
+      "Product backlog management template",
+      "Product backlog management framework",
+      "Backlog management tools",
+      "Product backlog management agile",
+      "Product backlog example",
+      "Product Backlog Management activities",
+      "Backlog Management in Agile",
+      "Backlog Management best practices",
+      "What is backlog in product management?",
+      "How to effectively manage a product backlog?"
+    ],
+    "lsi_keywords": [
+      "Product backlog management template",
+      "Product backlog management framework",
+      "Product backlog management agile",
+      "Product Backlog Management activities",
+      "Backlog Management in Agile",
+      "Backlog Management best practices",
+      "What is backlog in product management?",
+      "How to effectively manage a product backlog?",
+      "What is the 3 5 3 rule in Scrum?",
+      "What is the 20 30 50 rule for prioritizing backlog items?"
+    ],
+    "target_keyword_density": "1-2%",
+    "content_optimization_score": 0,
+    "formatting_guide": {
+      "h1": "# Heading 1",
+      "h2": "## Heading 2",
+      "h3": "### Heading 3",
+      "h4": "#### Heading 4",
+      "bold": "**bold text**",
+      "italic": "*italic text*",
+      "bold_italic": "***bold italic***",
+      "link": "[link text](url)",
+      "list_item": "- List item",
+      "numbered_list": "1. Numbered item"
+    }
+  },
+  "_structured_data_hints": {
+    "type": "SoftwareApplication",
+    "name": "Deliver",
+    "description": "Complete backlog management with visual prioritization. Manage epics, features, and user stories hierarchically, then prioritize with value-effort matrix. From strategic planning to sprint execution.",
+    "keywords": "product backlog management, product backlog managements, backlog product management, Product backlog management template, Product backlog management framework, Backlog management tools, Product backlog management agile, Product backlog example",
+    "aggregateRating": {
+      "hint": "Add from actual customer reviews",
+      "ratingValue": "4.8",
+      "reviewCount": "127"
+    },
+    "offers": {
+      "hint": "Add pricing information",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+}

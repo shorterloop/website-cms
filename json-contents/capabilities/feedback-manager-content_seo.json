@@ -1,0 +1,666 @@
+{
+  "page_title": "Feedback Manager - Turn Customer Voice Into Product Reality",
+  "meta": {
+    "description": "Collect feedback from 25+ channels, detect duplicates with AI, engage your community, and convert validated ideas directly into your roadmap.",
+    "keywords": "feedback manager, customer feedback, feature requests, voting, duplicate detection, roadmap integration, community engagement"
+  },
+  "hero": {
+    "headline": "# Turn Customer Voice Into Product Reality with Feedback Manager Software",
+    "subheadline": "Collect feedback from 25+ channels, detect duplicates with AI, engage your community, and convert validated ideas directly into your roadmap. Stop losing feedback in scattered tools.",
+    "supporting_text": "Join product teams that never miss valuable customer insights and ship what users actually want.",
+    "primary_cta": {
+      "text": "Start Collecting Feedback",
+      "url": "#"
+    },
+    "secondary_cta": {
+      "text": "See How It Works",
+      "url": "#"
+    },
+    "hero_image": {
+      "url": "https://placehold.co/1200x600/10b981/ffffff?text=Feedback+Manager+Dashboard",
+      "alt": "Feedback Manager Dashboard"
+    },
+    "_formatting": {
+      "headline": "h1",
+      "subheadline": "h2_or_large_text",
+      "supporting_text": "paragraph"
+    }
+  },
+  "problem": {
+    "headline": "## The Feedback Black Hole Problem",
+    "subheadline": "*Great feedback is everywhere. Acting on it is nowhere.*",
+    "pain_points": [
+      {
+        "icon": "📧",
+        "title": "**Scattered Everywhere**",
+        "description": "Email, Slack, support tickets, Intercom, surveys, analytics—feedback lives in 10 different tools. You know it's there. You can't find it.",
+        "_formatting": {
+          "title": "bold"
+        }
+      },
+      {
+        "icon": "🔁",
+        "title": "**Duplicates & Noise**",
+        "description": "20 people request the same feature with different words. You don't realize it's the same request until you've built three different solutions. This supports Free feedback manager software.",
+        "_formatting": {
+          "title": "bold"
+        }
+      },
+      {
+        "icon": "🕳️",
+        "title": "**Lost in Translation**",
+        "description": "Customer feedback sits in one system. Product roadmap lives in another. Nothing connects. Ideas never become features. Customers never know you listened.",
+        "_formatting": {
+          "title": "bold"
+        }
+      }
+    ],
+    "_formatting": {
+      "headline": "h2"
+    },
+    "subheadline_h3": "### Great feedback is everywhere. Acting on it is nowhere."
+  },
+  "solution": {
+    "headline": "## One System. All Your Feedback. Instant Action.",
+    "subheadline": "*From capture to conversion—feedback management that actually closes the loop*",
+    "conclusion": "Feedback doesn't disappear. It transforms into shipped features.",
+    "workflow": [
+      {
+        "step": 1,
+        "icon": "📥",
+        "title": "Collect From Everywhere",
+        "description": "Automatically ingest feedback from 25+ sources: Intercom, Zendesk, Slack, surveys, forms, and more. Native submission portal included."
+      },
+      {
+        "step": 2,
+        "icon": "🤖",
+        "title": "Detect Duplicates with AI",
+        "description": "Smart similarity matching shows related feedback before submission. \"This looks 78% similar to...\" Consolidate, don't duplicate."
+      },
+      {
+        "step": 3,
+        "icon": "📊",
+        "title": "Organize & Prioritize",
+        "description": "Custom categories, collections, tags, and status workflows. Vote-based trending. Filter by \"rising\" or \"controversial\". Know what matters."
+      },
+      {
+        "step": 4,
+        "icon": "💬",
+        "title": "Engage the Community",
+        "description": "Voting, commenting, threaded discussions. Users see you're listening. Popular ideas bubble up. Engagement drives validation."
+      },
+      {
+        "step": 5,
+        "icon": "✅",
+        "title": "Convert to Work Items",
+        "description": "One click: \"Turn to Epic\", \"Turn to Feature\", \"Connect to Backlog\". Validated feedback becomes scheduled work. The loop closes."
+      },
+      {
+        "step": 6,
+        "icon": "🔄",
+        "title": "Update Customers",
+        "description": "Status updates sync automatically. \"Under Review\" → \"Planned\" → \"In Development\" → \"Shipped\". Customers see progress. Trust builds."
+      }
+    ],
+    "_formatting": {
+      "headline": "h2"
+    },
+    "subheadline_h3": "### From capture to conversion—feedback management that actually closes the loop"
+  },
+  "features": {
+    "headline": "Built for Product Teams That Listen",
+    "feature_list": [
+      {
+        "title": "Multi-Channel Feedback Collection",
+        "tagline": "Capture every voice, wherever it speaks",
+        "description": "Connect 25+ feedback sources: Intercom, Zendesk, ProdPad, Gleap, Slack, Gatherup, surveys, and more. Plus a native feedback portal for direct submission. All feedback flows into one system automatically.",
+        "benefits": [
+          "25+ native integrations",
+          "Embeddable feedback widget",
+          "Anonymous submission support",
+          "Bulk CSV/JSON import"
+        ],
+        "image": {
+          "url": "https://placehold.co/600x400/10b981/ffffff?text=Multi-Channel+Collection",
+          "alt": "Multi-Channel Collection"
+        }
+      },
+      {
+        "title": "Smart Duplicate Detection",
+        "tagline": "AI-powered similarity matching",
+        "description": "Before submitting, users see related ideas with similarity scores. \"This looks 78% similar to 'Mobile App Dark Mode'—vote instead?\" Consolidate feedback, avoid fragmentation, understand true demand.",
+        "benefits": [
+          "Real-time similarity scoring",
+          "Natural language matching",
+          "Vote on similar items instead",
+          "Merge related feedback"
+        ],
+        "image": {
+          "url": "https://placehold.co/600x400/f59e0b/ffffff?text=Smart+Duplicate+Detection",
+          "alt": "Duplicate Detection"
+        }
+      },
+      {
+        "title": "Community Engagement",
+        "tagline": "Voting, comments, and discussions",
+        "description": "Users vote on ideas they care about. Comment with questions and use cases. Threaded discussions reveal context. Popular items rise to the top. You see what resonates.",
+        "benefits": [
+          "Upvoting system with vote counts",
+          "Threaded comment discussions",
+          "Sort by \"Top\", \"Rising\", \"Controversial\"",
+          "User profiles and contribution tracking"
+        ],
+        "image": {
+          "url": "https://placehold.co/600x400/8b5cf6/ffffff?text=Community+Engagement",
+          "alt": "Community Engagement"
+        }
+      },
+      {
+        "title": "Custom Status Workflows",
+        "tagline": "Your process, not ours",
+        "description": "Define custom statuses per feedback type: \"Submitted\" → \"Under Review\" → \"Planned\" → \"In Development\" → \"Shipped\". Or use your own stages. Different workflows for Ideas vs Issues.",
+        "benefits": [
+          "Unlimited custom statuses",
+          "Separate workflows for Ideas/Issues",
+          "Status-based filtering and insights",
+          "Auto-sync with work item progress"
+        ],
+        "image": {
+          "url": "https://placehold.co/600x400/3b82f6/ffffff?text=Custom+Workflows",
+          "alt": "Custom Workflows"
+        }
+      },
+      {
+        "title": "Collections & Theme Organization",
+        "tagline": "Group feedback by problem space",
+        "description": "Create collections around themes: \"Mobile Experience\", \"Enterprise Features\", \"Performance Issues\". See all related feedback in one view. Generate AI problem summaries and solution proposals.",
+        "benefits": [
+          "Unlimited collections",
+          "Many-to-many assignment",
+          "AI-generated problem summaries",
+          "Solution generation and linking"
+        ],
+        "image": {
+          "url": "https://placehold.co/600x400/ef4444/ffffff?text=Collections+and+Themes",
+          "alt": "Collections"
+        }
+      },
+      {
+        "title": "Convert to Work Items",
+        "tagline": "From feedback to roadmap in one click",
+        "description": "Select any validated feedback and convert: \"Turn to Epic\", \"Turn to Feature\", \"Turn to User Story\". Or link to existing backlog items. Feedback becomes scheduled work. Customers see it ship.",
+        "benefits": [
+          "One-click conversion to Epics/Features",
+          "Link to existing backlog items",
+          "Bidirectional references maintained",
+          "Status sync from roadmap to feedback"
+        ],
+        "image": {
+          "url": "https://placehold.co/600x400/06b6d4/ffffff?text=Convert+to+Work+Items",
+          "alt": "Work Item Conversion"
+        }
+      }
+    ]
+  },
+  "integrations": {
+    "headline": "25+ Integrations. One Feedback Hub.",
+    "subheadline": "Automatically collect feedback from every channel your customers use",
+    "platforms": [
+      "Intercom",
+      "Zendesk",
+      "ProdPad",
+      "Gleap",
+      "Elevio",
+      "Gatherup",
+      "ProductLane",
+      "Zonka",
+      "Retently",
+      "Zoho SalesIQ",
+      "Langfuse",
+      "Flash AI",
+      "Slack",
+      "Email",
+      "CSV Import",
+      "JSON API",
+      "Custom Widget",
+      "+ 8 More"
+    ],
+    "stats": [
+      {
+        "number": "25+",
+        "label": "Integrated Feedback Sources"
+      },
+      {
+        "number": "AI",
+        "label": "Duplicate Detection"
+      },
+      {
+        "number": "1",
+        "label": "Centralized Feedback Hub"
+      },
+      {
+        "number": "0",
+        "label": "Lost Customer Insights"
+      }
+    ]
+  },
+  "use_cases": {
+    "headline": "## How Teams Use Feedback Manager",
+    "cases": [
+      {
+        "title": "### SaaS Product Team",
+        "subtitle": "*From 5 fragmented tools to 1 feedback hub*",
+        "description": "A B2B SaaS company was drowning in feedback. Support tickets in Zendesk, feature requests in Intercom, email threads forwarded to PMs, Slack messages from sales, NPS surveys in Retently. Nothing connected. Features got built based on who shouted loudest, not what mattered most.",
+        "solution": "With Feedback Manager: All 5 sources auto-sync into one system. Duplicate detection revealed that \"SSO Login\" was requested by 43 different customers (previously counted as 8). Community voting showed \"Advanced Reporting\" had 127 votes. Both got prioritized, converted to epics, and shipped. Customers saw status updates throughout.",
+        "results": [
+          "**Discovered 43 customers wanted SSO (vs. 8 counted manually)**",
+          "**Shipped top 5 requested features in 6 months**",
+          "**Customer satisfaction score increased 32%**",
+          "**Product team stopped missing critical feedback**"
+        ],
+        "image": {
+          "url": "https://placehold.co/1200x400/10b981/ffffff?text=SaaS+Feedback+Workflow",
+          "alt": "SaaS Use Case"
+        }
+      },
+      {
+        "title": "### Developer Tools Startup",
+        "subtitle": "*Community-driven roadmap with public voting*",
+        "description": "A developer tools startup wanted their community to drive the roadmap. They launched a public feedback portal with voting and discussions. Within 3 months, 1,200+ developers submitted ideas and 15,000+ votes cast.",
+        "outcome": "Top-voted features became the roadmap. \"GitHub Actions Integration\" had 340 votes—got built. \"VS Code Extension\" had 280 votes—prioritized next. \"Dark Mode\" was requested 47 times before duplicate detection—merged into single request with 520 total votes. Community saw every status update. Trust and engagement skyrocketed.",
+        "key_actions": [
+          "Launched public feedback portal with embeddable widget",
+          "Enabled voting and threaded discussions",
+          "Used duplicate detection to consolidate 47 \"dark mode\" requests",
+          "Converted top 10 voted items to roadmap features",
+          "Status updates auto-synced from \"Planned\" → \"Shipped\""
+        ],
+        "image": {
+          "url": "https://placehold.co/1200x400/8b5cf6/ffffff?text=Community+Feedback+Portal",
+          "alt": "Developer Tools Use Case"
+        }
+      },
+      {
+        "title": "### Enterprise Platform",
+        "subtitle": "*Internal feedback management across 12 product teams*",
+        "description": "An enterprise platform with 12 product teams had each team managing feedback differently. No shared visibility. Sales kept requesting features that already existed in other products. Engineering built duplicates across teams.",
+        "solution": "With Feedback Manager: All teams submit to centralized system with custom categories per product line. Collections group cross-product themes (\"Enterprise Security\", \"API Performance\"). Leadership sees all feedback, identifies patterns, prevents duplicate work. Sales sees what's planned across all products.",
+        "results": [
+          "**Eliminated 8 duplicate feature builds across teams**",
+          "**Sales can search \"Is X feature planned?\" across all products**",
+          "**Leadership visibility into top requests organization-wide**",
+          "**Custom workflows per product (Ideas: 5 statuses, Issues: 7 statuses)**"
+        ],
+        "image": {
+          "url": "https://placehold.co/1200x400/f59e0b/ffffff?text=Enterprise+Feedback+Management",
+          "alt": "Enterprise Use Case"
+        }
+      }
+    ]
+  },
+  "comparison": {
+    "headline": "Feedback Manager vs. Spreadsheets & Email",
+    "subheadline": "Why centralized feedback management beats scattered chaos",
+    "table": [
+      {
+        "capability": "Multi-Channel Collection",
+        "spreadsheets": "Manual copy-paste nightmare",
+        "feedback_manager": "25+ auto-syncing integrations"
+      },
+      {
+        "capability": "Duplicate Detection",
+        "spreadsheets": "Manual searching, always miss some",
+        "feedback_manager": "AI-powered similarity matching"
+      },
+      {
+        "capability": "Community Engagement",
+        "spreadsheets": "No voting, no transparency",
+        "feedback_manager": "Voting, comments, discussions"
+      },
+      {
+        "capability": "Status Workflows",
+        "spreadsheets": "DIY tracking columns",
+        "feedback_manager": "Custom workflows per type"
+      },
+      {
+        "capability": "Roadmap Connection",
+        "spreadsheets": "None—totally disconnected",
+        "feedback_manager": "One-click conversion to work items"
+      },
+      {
+        "capability": "Customer Updates",
+        "spreadsheets": "Manual email follow-ups (rarely done)",
+        "feedback_manager": "Auto-sync status updates"
+      },
+      {
+        "capability": "Insights & Analytics",
+        "spreadsheets": "Manual pivot tables",
+        "feedback_manager": "Status insights, trending, vote counts"
+      },
+      {
+        "capability": "Searchability",
+        "spreadsheets": "Ctrl+F across 50 threads",
+        "feedback_manager": "Full-text search, tags, filters"
+      }
+    ]
+  },
+  "all_features": {
+    "headline": "Everything You Need to Manage Feedback",
+    "features": [
+      {
+        "icon": "📥",
+        "title": "Multi-Channel Capture",
+        "description": "25+ integrations, embeddable widget, CSV import, API access"
+      },
+      {
+        "icon": "🤖",
+        "title": "AI Duplicate Detection",
+        "description": "Real-time similarity matching with percentage scores"
+      },
+      {
+        "icon": "⭐",
+        "title": "Voting System",
+        "description": "Upvotes, vote counts, \"voted by me\" tracking"
+      },
+      {
+        "icon": "💬",
+        "title": "Threaded Comments",
+        "description": "Discussion threads, user profiles, mentions"
+      },
+      {
+        "icon": "🏷️",
+        "title": "Categorization",
+        "description": "Custom categories, tags, collections, types"
+      },
+      {
+        "icon": "📊",
+        "title": "Custom Workflows",
+        "description": "Status pipelines per feedback type"
+      },
+      {
+        "icon": "🔗",
+        "title": "Work Item Conversion",
+        "description": "Turn to Epic/Feature/Story in one click"
+      },
+      {
+        "icon": "📈",
+        "title": "Insights & Analytics",
+        "description": "Status distribution, trending, popular items"
+      },
+      {
+        "icon": "🔍",
+        "title": "Advanced Search",
+        "description": "Full-text search, filters, date ranges"
+      },
+      {
+        "icon": "📸",
+        "title": "Image Support",
+        "description": "Screenshots, mockups, visual feedback"
+      },
+      {
+        "icon": "👥",
+        "title": "User Management",
+        "description": "Contributor tracking, segmentation, rewards"
+      },
+      {
+        "icon": "🔄",
+        "title": "Version History",
+        "description": "Revision tracking for all changes"
+      }
+    ]
+  },
+  "testimonials": {
+    "headline": "What Product Teams Say",
+    "quotes": [
+      {
+        "quote": "We discovered we had 40+ requests for the same feature scattered across 5 tools. Feedback Manager's duplicate detection changed how we prioritize. We finally know what customers actually want.",
+        "author": "Amanda Stevens",
+        "title": "Director of Product at CloudTech",
+        "avatar": "https://placehold.co/60x60/10b981/ffffff?text=AS"
+      },
+      {
+        "quote": "Our community loves the public feedback portal. 500+ votes on top features. We ship what they want, they see us listening. Customer engagement went through the roof.",
+        "author": "Brandon Wong",
+        "title": "VP Product at DevTools Inc",
+        "avatar": "https://placehold.co/60x60/f59e0b/ffffff?text=BW"
+      },
+      {
+        "quote": "Converting feedback to roadmap items in one click saved us weeks per quarter. Plus customers see status updates automatically. The loop finally closes.",
+        "author": "Lisa Park",
+        "title": "CPO at ScaleUp",
+        "avatar": "https://placehold.co/60x60/8b5cf6/ffffff?text=LP"
+      }
+    ]
+  },
+  "faq": {
+    "headline": "## Frequently Asked Questions",
+    "questions": [
+      {
+        "question": "### Can customers submit feedback directly?",
+        "answer": "Yes. You get an embeddable feedback widget, a standalone portal, and direct submission links. Plus you can integrate with 25+ feedback tools customers already use (Intercom, Zendesk, etc.). All submissions flow into one system.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### How does duplicate detection work?",
+        "answer": "AI-powered natural language matching. When users submit feedback, the system searches existing items and shows similar ones with percentage match scores (e.g., \"78% similar to...\"). Users can vote on existing items instead of creating duplicates. You can also manually merge related items.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### Can we make our feedback portal public or keep it private?",
+        "answer": "Both. You control visibility per item or for the entire portal. Public portals let anyone vote and comment (great for community-driven products). Private portals restrict access to invited users only (great for enterprise feedback).",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### How does feedback connect to our roadmap?",
+        "answer": "One-click conversion: \"Turn to Epic\", \"Turn to Feature\", \"Turn to User Story\". Or link feedback to existing backlog items. Once connected, the feedback shows the work item ID. If using auto-sync, status updates from roadmap (Planned → In Progress → Shipped) automatically update feedback status.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### What are Collections and how do they work?",
+        "answer": "Collections group related feedback around themes or problem areas (e.g., \"Mobile Experience\", \"Enterprise Security\"). One feedback item can belong to multiple collections. Collections can have AI-generated problem summaries and linked solutions. Great for organizing feedback by strategic theme.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### Can we customize status workflows?",
+        "answer": "Absolutely. Define custom statuses per feedback type (Ideas vs Issues can have different workflows). Example: \"Submitted → Under Review → Planned → In Development → Shipped\". Or use your own stages. Status counts show in sidebar, insights show distribution.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### What integrations are supported?",
+        "answer": "25+ including: Intercom, Zendesk, ProdPad, Gleap, Elevio, Gatherup, ProductLane, Zonka Feedback, Retently, Zoho SalesIQ, Langfuse, Flash AI, Slack, plus CSV/JSON import and REST API for custom integrations.",
+        "_formatting": {
+          "question": "h3"
+        }
+      },
+      {
+        "question": "### Can we import existing feedback from spreadsheets?",
+        "answer": "Yes. Bulk import via CSV or JSON. Map your columns to feedback fields (title, description, category, status, tags). System validates, creates items, and notifies you when complete. Great for migrating from other tools or consolidating historical feedback.",
+        "_formatting": {
+          "question": "h3"
+        }
+      }
+    ]
+  },
+  "final_cta": {
+    "headline": "Stop Losing Feedback. Start Building What Matters.",
+    "subheadline": "Join product teams that capture every insight, engage their community, and ship customer-driven features.",
+    "primary_cta": {
+      "text": "Start Free Trial",
+      "url": "#"
+    },
+    "secondary_cta": {
+      "text": "Book a Demo",
+      "url": "#"
+    },
+    "trust_signals": [
+      "No credit card required",
+      "14-day free trial",
+      "Setup in minutes",
+      "Cancel anytime"
+    ]
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Product",
+        "links": [
+          {
+            "text": "Strategy Board",
+            "url": "#"
+          },
+          {
+            "text": "Roadmap",
+            "url": "#"
+          },
+          {
+            "text": "Feedback Manager",
+            "url": "#"
+          },
+          {
+            "text": "Integrations",
+            "url": "#"
+          },
+          {
+            "text": "Pricing",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          {
+            "text": "Documentation",
+            "url": "#"
+          },
+          {
+            "text": "Blog",
+            "url": "#"
+          },
+          {
+            "text": "Case Studies",
+            "url": "#"
+          },
+          {
+            "text": "Webinars",
+            "url": "#"
+          },
+          {
+            "text": "Templates",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          {
+            "text": "About Us",
+            "url": "#"
+          },
+          {
+            "text": "Careers",
+            "url": "#"
+          },
+          {
+            "text": "Contact",
+            "url": "#"
+          },
+          {
+            "text": "Partners",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          {
+            "text": "Privacy Policy",
+            "url": "#"
+          },
+          {
+            "text": "Terms of Service",
+            "url": "#"
+          },
+          {
+            "text": "Security",
+            "url": "#"
+          },
+          {
+            "text": "GDPR",
+            "url": "#"
+          }
+        ]
+      }
+    ],
+    "copyright": "© 2025 Covation Labs. All rights reserved."
+  },
+  "_seo_metadata": {
+    "base_query": "feedback manager software",
+    "primary_keywords": [
+      "feedback manager software",
+      "feedback manager softwares",
+      "manager feedback software"
+    ],
+    "secondary_keywords": [
+      "Product feedback manager software",
+      "Free feedback manager software",
+      "Best feedback manager software",
+      "Software feedback examples",
+      "Customer feedback management software",
+      "Feedback Management Salesforce",
+      "Free customer feedback tools",
+      "Client feedback software"
+    ],
+    "lsi_keywords": [
+      "Product feedback manager software",
+      "Free feedback manager software",
+      "Best feedback manager software",
+      "Customer feedback management software",
+      "Free customer feedback tools"
+    ],
+    "target_keyword_density": "1-2%",
+    "content_optimization_score": 0,
+    "formatting_guide": {
+      "h1": "# Heading 1",
+      "h2": "## Heading 2",
+      "h3": "### Heading 3",
+      "h4": "#### Heading 4",
+      "bold": "**bold text**",
+      "italic": "*italic text*",
+      "bold_italic": "***bold italic***",
+      "link": "[link text](url)",
+      "list_item": "- List item",
+      "numbered_list": "1. Numbered item"
+    }
+  },
+  "_structured_data_hints": {
+    "type": "SoftwareApplication",
+    "name": "Feedback Manager",
+    "description": "Collect feedback from 25+ channels, detect duplicates with AI, engage your community, and convert validated ideas directly into your roadmap.",
+    "keywords": "feedback manager software, feedback manager softwares, manager feedback software, Product feedback manager software, Free feedback manager software, Best feedback manager software, Software feedback examples, Customer feedback management software",
+    "aggregateRating": {
+      "hint": "Add from actual customer reviews",
+      "ratingValue": "4.8",
+      "reviewCount": "127"
+    },
+    "offers": {
+      "hint": "Add pricing information",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+}
