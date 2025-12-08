@@ -1,5 +1,17 @@
 import { GlobalConfig } from 'payload'
-import { HeroBlock, CTABlock, TestimonialBlock, MetricsBlock } from '../blocks'
+import {
+  // P0 Blocks
+  HeroBlock,
+  CTABlock,
+  TestimonialBlock,
+  MetricsBlock,
+  // P1 Blocks
+  WorkflowBlock,
+  PainPointsBlock,
+  RelatedContentBlock,
+  IntegrationsBlock,
+  TransformationBlock,
+} from '../blocks'
 import { seoFields } from '../fields'
 
 export const Homepage: GlobalConfig = {
@@ -21,7 +33,19 @@ export const Homepage: GlobalConfig = {
               name: 'sections',
               type: 'blocks',
               label: 'Page Sections',
-              blocks: [HeroBlock, CTABlock, TestimonialBlock, MetricsBlock],
+              blocks: [
+                // P0 Blocks
+                HeroBlock,
+                CTABlock,
+                TestimonialBlock,
+                MetricsBlock,
+                // P1 Blocks
+                WorkflowBlock,
+                PainPointsBlock,
+                TransformationBlock,
+                IntegrationsBlock,
+                RelatedContentBlock,
+              ],
               minRows: 1,
               admin: {
                 description:
