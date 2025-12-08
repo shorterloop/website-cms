@@ -25,3 +25,8 @@ export { ProofImageBlock } from './ProofImage'
 export { GateLeadCaptureBlock } from './GateLeadCapture'
 export { ChapterSectionBlock } from './ChapterSection'
 export { TableOfContentsBlock } from './TableOfContents'
+
+// Special Blocks
+export { AIEngineBlock } from './AIEngine'
+export { CapabilityClustersBlock } from './CapabilityClusters'
+export { RootCauseBlock } from './RootCause'
