@@ -11,6 +11,12 @@ import {
   RelatedContentBlock,
   IntegrationsBlock,
   TransformationBlock,
+  // P2 Blocks
+  FAQBlock,
+  ComparisonTableBlock,
+  FeaturesBlock,
+  CapabilityLinksBlock,
+  UseCasesBlock,
 } from '../blocks'
 import { seoFields } from '../fields'
 
@@ -45,6 +51,12 @@ export const Homepage: GlobalConfig = {
                 TransformationBlock,
                 IntegrationsBlock,
                 RelatedContentBlock,
+                // P2 Blocks
+                FAQBlock,
+                ComparisonTableBlock,
+                FeaturesBlock,
+                CapabilityLinksBlock,
+                UseCasesBlock,
               ],
               minRows: 1,
               admin: {
