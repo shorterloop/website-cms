@@ -117,7 +117,6 @@ export const HeroBlock: Block = {
       type: 'upload',
       relationTo: 'media',
       label: 'Hero Image',
-      required: true,
       admin: {
         description: 'Product screenshot or illustration. Shows the product, not stock photography.',
       },

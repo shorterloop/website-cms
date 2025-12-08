@@ -4,7 +4,7 @@
  */
 
 export const homepageData = {
-  blocks: [
+  sections: [
     // Section 1: Hero
     {
       blockType: 'hero',
@@ -217,7 +217,7 @@ export const homepageData = {
       headline: 'Your Research Team, Always On',
       subheadline:
         'AI that synthesizes thousands of customer signals into actionable insights—work that would take humans weeks.',
-      body: 'Most AI summarizes. Ours synthesizes. It finds connections across feedback sources, identifies emerging patterns before they become obvious, and surfaces opportunities you would have missed. Not a replacement for product thinking—an amplifier for it.',
+      body: 'Most AI summarizes. Ours synthesizes—finding connections across feedback sources and surfacing patterns humans would miss. Not a replacement for product thinking, an amplifier.',
       capabilities: [
         {
           title: 'Cross-Source Synthesis',
