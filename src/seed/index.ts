@@ -38,10 +38,11 @@ async function seed() {
     // This seed creates the block structure with placeholder references.
 
     // Create the homepage content
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     await payload.updateGlobal({
       slug: 'homepage',
       data: {
-        sections: homepageData.sections,
+        sections: homepageData.sections as any,
         ...homepageData.seo,
       },
     })
