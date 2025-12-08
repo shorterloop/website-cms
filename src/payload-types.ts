@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    capabilities: Capability;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -78,6 +79,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    capabilities: CapabilitiesSelect<false> | CapabilitiesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -161,6 +163,820 @@ export interface Media {
   height?: number | null;
 }
 /**
+ * Capability pages (e.g., Feedback Manager, Signals Engine, OST, Roadmap Builder)
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "capabilities".
+ */
+export interface Capability {
+  id: number;
+  /**
+   * e.g., "Feedback Manager"
+   */
+  displayName: string;
+  /**
+   * e.g., "feedback-manager"
+   */
+  slug: string;
+  /**
+   * Which homepage cluster this capability belongs to
+   */
+  parentCluster: 'understand' | 'decide' | 'align';
+  /**
+   * The core insight. Why does this need to exist? Should work as a standalone LinkedIn post opener.
+   */
+  reasonThisCapabilityExists: string;
+  /**
+   * Optional contextual pricing hint. e.g., "Available on Scale and Enterprise plans"
+   */
+  pricingNote?: string | null;
+  pricingNoteType?: ('included_all_plans' | 'starter_and_above' | 'enterprise_only' | 'add_on' | 'seats_based') | null;
+  /**
+   * Build the capability page with sections. Tier 1 (Hero → Mid-CTA) hooks in 30 seconds. Tier 2 builds confidence. Tier 3 closes + ranks for SEO.
+   */
+  sections?:
+    | (
+        | {
+            /**
+             * Small text above the headline (e.g., "Discovery-First Product Management")
+             */
+            eyebrow?: string | null;
+            /**
+             * Main headline. Action-oriented, no jargon. Must pass the "so what" test in 3 seconds.
+             */
+            headline: string;
+            /**
+             * Word to highlight in the headline (will be styled with accent color)
+             */
+            headlineEmphasisWord?: string | null;
+            /**
+             * Expands on headline. Plain English value prop.
+             */
+            subheadline: string;
+            /**
+             * Optional proof point or additional context.
+             */
+            supportingText?: string | null;
+            /**
+             * e.g., "Start Free Trial"
+             */
+            primaryCtaText: string;
+            /**
+             * Valid internal path or URL
+             */
+            primaryCtaUrl: string;
+            /**
+             * e.g., "See How It Works"
+             */
+            secondaryCtaText?: string | null;
+            /**
+             * Valid internal path or URL
+             */
+            secondaryCtaUrl?: string | null;
+            /**
+             * Product screenshot or illustration. Shows the product, not stock photography.
+             */
+            image?: (number | null) | Media;
+            /**
+             * Small trust signal below CTAs (e.g., "No credit card required")
+             */
+            trustNote?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero';
+          }
+        | {
+            /**
+             * How to display the pain points
+             */
+            variant?: ('list' | 'cards' | 'narrative' | 'warnings') | null;
+            /**
+             * Name the struggle. Can be provocative.
+             */
+            headline: string;
+            /**
+             * Optional elaboration (will be italicized)
+             */
+            subheadline?: string | null;
+            /**
+             * The story. Prose, not bullets. Should include antagonist + loss. Use for "narrative" variant.
+             */
+            narrative?: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
+            /**
+             * List of pain points (3-4 recommended for most contexts)
+             */
+            painPoints: {
+              /**
+               * The pain in one line
+               */
+              title: string;
+              /**
+               * Expand the pain. Be specific, not generic.
+               */
+              description: string;
+              icon?:
+                | (
+                    | 'warning'
+                    | 'error'
+                    | 'time'
+                    | 'money'
+                    | 'confusion'
+                    | 'disconnect'
+                    | 'chaos'
+                    | 'silence'
+                    | 'conflict'
+                    | 'loss'
+                  )
+                | null;
+              /**
+               * For warning signs variant - indicates progression
+               */
+              severity?: ('early' | 'mid' | 'late') | null;
+              /**
+               * What happens because of this pain point
+               */
+              consequence?: string | null;
+              id?: string | null;
+            }[];
+            /**
+             * The question they ask themselves (e.g., "How do I justify this to the board?")
+             */
+            emotionalQuestion?: string | null;
+            /**
+             * The villains (behaviors, not people)
+             */
+            antagonists?:
+              | {
+                  /**
+                   * e.g., "Loudest-voice wins"
+                   */
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            /**
+             * What's at stake
+             */
+            losses?:
+              | {
+                  /**
+                   * e.g., "6 months building the wrong feature"
+                   */
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'painPoints';
+          }
+        | {
+            /**
+             * How to display the workflow steps
+             */
+            variant?: ('flow_line' | 'numbered' | 'cards' | 'timeline') | null;
+            /**
+             * Small text above the headline (e.g., "How It Works")
+             */
+            eyebrow?: string | null;
+            /**
+             * Section headline (e.g., "From Noise to Strategy")
+             */
+            headline: string;
+            /**
+             * Brief setup text
+             */
+            subheadline?: string | null;
+            /**
+             * The workflow steps (3-6 steps recommended)
+             */
+            steps: {
+              stepNumber: number;
+              /**
+               * Short label (e.g., "Signals", "Themes", "Opportunities")
+               */
+              label: string;
+              /**
+               * What happens at this stage
+               */
+              description: string;
+              /**
+               * Icon to display for this step
+               */
+              icon?:
+                | (
+                    | 'signal'
+                    | 'theme'
+                    | 'opportunity'
+                    | 'bet'
+                    | 'roadmap'
+                    | 'outcome'
+                    | 'collect'
+                    | 'analyze'
+                    | 'decide'
+                    | 'execute'
+                    | 'measure'
+                    | 'learn'
+                  )
+                | null;
+              /**
+               * Give this step visual emphasis (accent color)
+               */
+              isPivotPoint?: boolean | null;
+              /**
+               * Optional screenshot showing this step in action
+               */
+              screenshot?: (number | null) | Media;
+              id?: string | null;
+            }[];
+            /**
+             * Optional wrap-up text after the steps
+             */
+            conclusion?: string | null;
+            /**
+             * Optional diagram or illustration of the full workflow
+             */
+            visual?: (number | null) | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'workflow';
+          }
+        | {
+            /**
+             * e.g., "What you'll find on this page" or "On this page"
+             */
+            headline: string;
+            /**
+             * Anchored preview items (4-6). Use benefit-oriented labels.
+             */
+            previewItems: {
+              /**
+               * Benefit-oriented label, e.g., "How teams use this in practice" (not just "Use Cases")
+               */
+              label: string;
+              /**
+               * Section ID to scroll to (e.g., "use-cases", "faq", "comparison")
+               */
+              anchorId: string;
+              icon?:
+                | (
+                    | 'features'
+                    | 'use_cases'
+                    | 'integrations'
+                    | 'comparison'
+                    | 'faq'
+                    | 'testimonials'
+                    | 'workflow'
+                    | 'metrics'
+                  )
+                | null;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'pagePreview';
+          }
+        | {
+            /**
+             * Controls the visual style of the CTA section
+             */
+            variant?: ('standard' | 'compact' | 'final') | null;
+            /**
+             * Display large logo mark above headline (typically for final CTA)
+             */
+            showLogoMark?: boolean | null;
+            /**
+             * Strong, transformation-focused headline. Reinforce core value.
+             */
+            headline: string;
+            /**
+             * Optional supporting text or final nudge.
+             */
+            subheadline?: string | null;
+            /**
+             * Action verb + outcome (e.g., "Start Free Trial")
+             */
+            primaryCtaText: string;
+            /**
+             * Usually signup or trial
+             */
+            primaryCtaUrl: string;
+            /**
+             * Alternative action (e.g., "Book a Demo")
+             */
+            secondaryCtaText?: string | null;
+            /**
+             * Demo or contact page
+             */
+            secondaryCtaUrl?: string | null;
+            /**
+             * Display trust signals below the CTAs
+             */
+            showTrustSignals?: boolean | null;
+            /**
+             * Reduce friction with trust signals (e.g., "No credit card required")
+             */
+            trustSignals?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            /**
+             * Optional extra context below the CTA buttons
+             */
+            additionalMessage?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cta';
+          }
+        | {
+            /**
+             * e.g., "Built for Teams That Listen"
+             */
+            headline: string;
+            /**
+             * Optional framing
+             */
+            subheadline?: string | null;
+            /**
+             * Primary features shown prominently (2-3)
+             */
+            heroFeatures: {
+              title: string;
+              /**
+               * One-line value prop
+               */
+              tagline: string;
+              /**
+               * Detailed explanation
+               */
+              description: string;
+              benefits: {
+                /**
+                 * Single benefit (outcome, not specification)
+                 */
+                text: string;
+                id?: string | null;
+              }[];
+              /**
+               * Screenshot or illustration
+               */
+              image: number | Media;
+              id?: string | null;
+            }[];
+            /**
+             * Secondary features shown smaller (0-6)
+             */
+            additionalFeatures?:
+              | {
+                  title: string;
+                  /**
+                   * One-line value prop
+                   */
+                  tagline: string;
+                  /**
+                   * Brief explanation
+                   */
+                  description: string;
+                  icon:
+                    | 'collect'
+                    | 'organize'
+                    | 'analyze'
+                    | 'prioritize'
+                    | 'track'
+                    | 'report'
+                    | 'integrate'
+                    | 'automate'
+                    | 'collaborate'
+                    | 'secure';
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'features';
+          }
+        | {
+            /**
+             * Optional. e.g., "See it in action"
+             */
+            headline?: string | null;
+            /**
+             * Type of proof being shown
+             */
+            proofType: 'screenshot' | 'before_after' | 'output_example' | 'audit_log' | 'graph';
+            /**
+             * MUST be a real screenshot, not a mockup or illustration
+             */
+            image: number | Media;
+            /**
+             * Describe the scenario. What are we looking at? Include context.
+             */
+            caption: string;
+            /**
+             * e.g., "Created by a 12-person product team during Q3 planning"
+             */
+            context?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'proofImage';
+          }
+        | {
+            /**
+             * How to display the integrations
+             */
+            variant?: ('grouped' | 'grid' | 'compact') | null;
+            /**
+             * e.g., "Works With Your Stack" or "25+ Integrations. One Hub."
+             */
+            headline: string;
+            /**
+             * Address the fear (e.g., "Keep using Jira. We'll handle the rest.")
+             */
+            subheadline: string;
+            /**
+             * Group integrations by category
+             */
+            integrationGroups: {
+              /**
+               * e.g., "Issue Trackers", "Support Tools", "Analytics"
+               */
+              groupName: string;
+              integrations: {
+                name: string;
+                status: 'live' | 'coming_soon' | 'beta';
+                /**
+                 * Highlight this integration
+                 */
+                featured?: boolean | null;
+                logo?: (number | null) | Media;
+                /**
+                 * Optional one-liner about what this integration does
+                 */
+                description?: string | null;
+                id?: string | null;
+              }[];
+              id?: string | null;
+            }[];
+            /**
+             * Other ways to integrate (API, CSV, etc.)
+             */
+            additionalMethods?:
+              | {
+                  /**
+                   * e.g., "REST API", "CSV Import", "Webhooks"
+                   */
+                  title: string;
+                  description: string;
+                  icon?: ('api' | 'csv' | 'webhook' | 'zapier' | 'code') | null;
+                  id?: string | null;
+                }[]
+              | null;
+            /**
+             * e.g., "See All Integrations"
+             */
+            ctaText?: string | null;
+            /**
+             * Link to full integrations page
+             */
+            ctaUrl?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'integrations';
+          }
+        | {
+            /**
+             * e.g., "How Teams Use Feedback Manager"
+             */
+            headline: string;
+            /**
+             * Optional framing
+             */
+            subheadline?: string | null;
+            /**
+             * Different scenarios or personas (2-4)
+             */
+            useCases: {
+              /**
+               * Scenario title, e.g., "SaaS Product Team"
+               */
+              title: string;
+              /**
+               * Context, e.g., "500+ backlog items"
+               */
+              subtitle?: string | null;
+              /**
+               * e.g., "B2B SaaS, 25-person team"
+               */
+              companyType?: string | null;
+              /**
+               * The problem they faced
+               */
+              challenge: string;
+              /**
+               * How they used the capability
+               */
+              solution: string;
+              /**
+               * Outcomes achieved. At least one must have a metric!
+               */
+              results: {
+                /**
+                 * Single result statement
+                 */
+                text: string;
+                /**
+                 * Does this result include a number/percentage/timeframe?
+                 */
+                hasMetric: boolean;
+                id?: string | null;
+              }[];
+              showQuote?: boolean | null;
+              quote?: {
+                text: string;
+                authorName: string;
+                /**
+                 * Role and company
+                 */
+                authorTitle: string;
+              };
+              /**
+               * Optional visual
+               */
+              image?: (number | null) | Media;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'useCases';
+          }
+        | {
+            /**
+             * e.g., "Feedback Manager vs. Traditional Tools"
+             */
+            headline: string;
+            /**
+             * Frame the comparison
+             */
+            subheadline?: string | null;
+            /**
+             * Compare against categories or named competitors
+             */
+            comparisonType: 'category' | 'specific';
+            /**
+             * Comparison columns (your product + competitors/alternatives)
+             */
+            columns: {
+              /**
+               * e.g., "Short Loop", "Spreadsheets", "Generic PM Tools"
+               */
+              name: string;
+              /**
+               * Check if this column represents your product (for styling)
+               */
+              isSelf?: boolean | null;
+              id?: string | null;
+            }[];
+            /**
+             * Features/criteria being compared
+             */
+            rows: {
+              /**
+               * What's being compared
+               */
+              feature: string;
+              /**
+               * Value for each column (must match number of columns)
+               */
+              values: {
+                /**
+                 * Which column (0, 1, or 2)
+                 */
+                columnIndex: number;
+                /**
+                 * Can include ✓/✗ or be descriptive
+                 */
+                value: string;
+                highlight?: boolean | null;
+                id?: string | null;
+              }[];
+              id?: string | null;
+            }[];
+            /**
+             * Optional wrap-up statement
+             */
+            conclusion?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'comparisonTable';
+          }
+        | {
+            /**
+             * e.g., "Frequently Asked Questions"
+             */
+            headline: string;
+            /**
+             * More questions is better for SEO (6-15 recommended)
+             */
+            questions: {
+              /**
+               * Natural language question matching real search queries
+               */
+              question: string;
+              /**
+               * Comprehensive answer. Schema-eligible answers need 150+ characters for rich snippets.
+               */
+              answer: string;
+              /**
+               * Optional grouping
+               */
+              category?: ('general' | 'technical' | 'pricing' | 'security') | null;
+              /**
+               * Include in FAQ schema markup for rich snippets?
+               */
+              schemaEligible?: boolean | null;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'faq';
+          }
+        | {
+            /**
+             * How to display the testimonial(s)
+             */
+            variant?: ('single' | 'multiple' | 'with_metrics') | null;
+            /**
+             * e.g., "Teams Who've Made the Shift" or "What Product Teams Say"
+             */
+            headline?: string | null;
+            /**
+             * Quality over quantity. Specific outcomes beat generic praise.
+             */
+            quotes: {
+              /**
+               * The testimonial text. Must include specific outcome, not generic praise.
+               */
+              quote: string;
+              /**
+               * Optional context for the quote (e.g., "After 3 months using Shorter Loop")
+               */
+              context?: string | null;
+              authorName: string;
+              /**
+               * Role and company
+               */
+              authorTitle: string;
+              /**
+               * Headshot (increases trust significantly)
+               */
+              authorImage?: (number | null) | Media;
+              companyLogo?: (number | null) | Media;
+              /**
+               * Optional 1-5 star rating
+               */
+              rating?: number | null;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'testimonial';
+          }
+        | {
+            /**
+             * How to display the related content
+             */
+            variant?: ('cards' | 'list' | 'compact') | null;
+            /**
+             * e.g., "Continue Learning" or "Related Resources"
+             */
+            headline?: string | null;
+            /**
+             * Display a prominent next action for the user
+             */
+            showNextStep?: boolean | null;
+            /**
+             * The main recommended action for the reader
+             */
+            nextStep?: {
+              /**
+               * e.g., "Watch the 3-minute demo"
+               */
+              label: string;
+              url: string;
+              type: 'demo_video' | 'documentation' | 'template' | 'guide' | 'trial';
+              /**
+               * Brief description of what they'll get
+               */
+              description?: string | null;
+            };
+            /**
+             * Links to related content (capabilities, articles, etc.)
+             */
+            relatedItems?:
+              | {
+                  title: string;
+                  url: string;
+                  /**
+                   * How this content relates to the current page
+                   */
+                  relationshipType?: ('works_with' | 'alternative_to' | 'builds_on' | 'feeds_into' | 'related') | null;
+                  contentType?: ('capability' | 'use_case' | 'blog' | 'guide' | 'case_study' | 'template') | null;
+                  /**
+                   * Brief description or why it's relevant
+                   */
+                  description?: string | null;
+                  /**
+                   * Optional thumbnail image
+                   */
+                  image?: (number | null) | Media;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'relatedContent';
+          }
+      )[]
+    | null;
+  /**
+   * Primary next action: docs, demo video, or template
+   */
+  recommendedNextStepUrl: string;
+  /**
+   * e.g., "Watch the 3-minute demo"
+   */
+  recommendedNextStepLabel: string;
+  /**
+   * SEO content pairing: blog post or guide
+   */
+  relatedArticleUrl?: string | null;
+  /**
+   * Article title for display
+   */
+  relatedArticleTitle?: string | null;
+  /**
+   * Links to related capability pages (max 4)
+   */
+  relatedCapabilities?: (number | Capability)[] | null;
+  /**
+   * Page title for search engines. Include primary keyword. (50-60 characters)
+   */
+  metaTitle: string;
+  /**
+   * Compelling summary with keyword. (150-160 characters)
+   */
+  metaDescription: string;
+  /**
+   * Primary + secondary keywords for SEO tracking
+   */
+  metaKeywords?:
+    | {
+        keyword: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Image for social media sharing (1200x630px recommended)
+   */
+  ogImage?: (number | null) | Media;
+  /**
+   * Only set if this page should point to a different canonical URL
+   */
+  canonicalUrl?: string | null;
+  /**
+   * Prevent search engines from indexing this page
+   */
+  noIndex?: boolean | null;
+  /**
+   * Enable sticky table of contents for this page
+   */
+  showToc?: boolean | null;
+  tocPosition?: ('sidebar_sticky' | 'top_inline' | 'floating') | null;
+  /**
+   * Show reading progress indicator
+   */
+  showProgress?: boolean | null;
+  status?: ('draft' | 'published' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -191,6 +1007,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'capabilities';
+        value: number | Capability;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -271,6 +1091,361 @@ export interface MediaSelect<T extends boolean = true> {
   filesize?: T;
   width?: T;
   height?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "capabilities_select".
+ */
+export interface CapabilitiesSelect<T extends boolean = true> {
+  displayName?: T;
+  slug?: T;
+  parentCluster?: T;
+  reasonThisCapabilityExists?: T;
+  pricingNote?: T;
+  pricingNoteType?: T;
+  sections?:
+    | T
+    | {
+        hero?:
+          | T
+          | {
+              eyebrow?: T;
+              headline?: T;
+              headlineEmphasisWord?: T;
+              subheadline?: T;
+              supportingText?: T;
+              primaryCtaText?: T;
+              primaryCtaUrl?: T;
+              secondaryCtaText?: T;
+              secondaryCtaUrl?: T;
+              image?: T;
+              trustNote?: T;
+              id?: T;
+              blockName?: T;
+            };
+        painPoints?:
+          | T
+          | {
+              variant?: T;
+              headline?: T;
+              subheadline?: T;
+              narrative?: T;
+              painPoints?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    severity?: T;
+                    consequence?: T;
+                    id?: T;
+                  };
+              emotionalQuestion?: T;
+              antagonists?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              losses?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        workflow?:
+          | T
+          | {
+              variant?: T;
+              eyebrow?: T;
+              headline?: T;
+              subheadline?: T;
+              steps?:
+                | T
+                | {
+                    stepNumber?: T;
+                    label?: T;
+                    description?: T;
+                    icon?: T;
+                    isPivotPoint?: T;
+                    screenshot?: T;
+                    id?: T;
+                  };
+              conclusion?: T;
+              visual?: T;
+              id?: T;
+              blockName?: T;
+            };
+        pagePreview?:
+          | T
+          | {
+              headline?: T;
+              previewItems?:
+                | T
+                | {
+                    label?: T;
+                    anchorId?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        cta?:
+          | T
+          | {
+              variant?: T;
+              showLogoMark?: T;
+              headline?: T;
+              subheadline?: T;
+              primaryCtaText?: T;
+              primaryCtaUrl?: T;
+              secondaryCtaText?: T;
+              secondaryCtaUrl?: T;
+              showTrustSignals?: T;
+              trustSignals?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              additionalMessage?: T;
+              id?: T;
+              blockName?: T;
+            };
+        features?:
+          | T
+          | {
+              headline?: T;
+              subheadline?: T;
+              heroFeatures?:
+                | T
+                | {
+                    title?: T;
+                    tagline?: T;
+                    description?: T;
+                    benefits?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    image?: T;
+                    id?: T;
+                  };
+              additionalFeatures?:
+                | T
+                | {
+                    title?: T;
+                    tagline?: T;
+                    description?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        proofImage?:
+          | T
+          | {
+              headline?: T;
+              proofType?: T;
+              image?: T;
+              caption?: T;
+              context?: T;
+              id?: T;
+              blockName?: T;
+            };
+        integrations?:
+          | T
+          | {
+              variant?: T;
+              headline?: T;
+              subheadline?: T;
+              integrationGroups?:
+                | T
+                | {
+                    groupName?: T;
+                    integrations?:
+                      | T
+                      | {
+                          name?: T;
+                          status?: T;
+                          featured?: T;
+                          logo?: T;
+                          description?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              additionalMethods?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              ctaText?: T;
+              ctaUrl?: T;
+              id?: T;
+              blockName?: T;
+            };
+        useCases?:
+          | T
+          | {
+              headline?: T;
+              subheadline?: T;
+              useCases?:
+                | T
+                | {
+                    title?: T;
+                    subtitle?: T;
+                    companyType?: T;
+                    challenge?: T;
+                    solution?: T;
+                    results?:
+                      | T
+                      | {
+                          text?: T;
+                          hasMetric?: T;
+                          id?: T;
+                        };
+                    showQuote?: T;
+                    quote?:
+                      | T
+                      | {
+                          text?: T;
+                          authorName?: T;
+                          authorTitle?: T;
+                        };
+                    image?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        comparisonTable?:
+          | T
+          | {
+              headline?: T;
+              subheadline?: T;
+              comparisonType?: T;
+              columns?:
+                | T
+                | {
+                    name?: T;
+                    isSelf?: T;
+                    id?: T;
+                  };
+              rows?:
+                | T
+                | {
+                    feature?: T;
+                    values?:
+                      | T
+                      | {
+                          columnIndex?: T;
+                          value?: T;
+                          highlight?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              conclusion?: T;
+              id?: T;
+              blockName?: T;
+            };
+        faq?:
+          | T
+          | {
+              headline?: T;
+              questions?:
+                | T
+                | {
+                    question?: T;
+                    answer?: T;
+                    category?: T;
+                    schemaEligible?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        testimonial?:
+          | T
+          | {
+              variant?: T;
+              headline?: T;
+              quotes?:
+                | T
+                | {
+                    quote?: T;
+                    context?: T;
+                    authorName?: T;
+                    authorTitle?: T;
+                    authorImage?: T;
+                    companyLogo?: T;
+                    rating?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        relatedContent?:
+          | T
+          | {
+              variant?: T;
+              headline?: T;
+              showNextStep?: T;
+              nextStep?:
+                | T
+                | {
+                    label?: T;
+                    url?: T;
+                    type?: T;
+                    description?: T;
+                  };
+              relatedItems?:
+                | T
+                | {
+                    title?: T;
+                    url?: T;
+                    relationshipType?: T;
+                    contentType?: T;
+                    description?: T;
+                    image?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+      };
+  recommendedNextStepUrl?: T;
+  recommendedNextStepLabel?: T;
+  relatedArticleUrl?: T;
+  relatedArticleTitle?: T;
+  relatedCapabilities?: T;
+  metaTitle?: T;
+  metaDescription?: T;
+  metaKeywords?:
+    | T
+    | {
+        keyword?: T;
+        id?: T;
+      };
+  ogImage?: T;
+  canonicalUrl?: T;
+  noIndex?: T;
+  showToc?: T;
+  tocPosition?: T;
+  showProgress?: T;
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -365,7 +1540,7 @@ export interface Homepage {
             /**
              * Product screenshot or illustration. Shows the product, not stock photography.
              */
-            image: number | Media;
+            image?: (number | null) | Media;
             /**
              * Small trust signal below CTAs (e.g., "No credit card required")
              */
@@ -785,7 +1960,7 @@ export interface Homepage {
                  * Highlight this integration
                  */
                 featured?: boolean | null;
-                logo: number | Media;
+                logo?: (number | null) | Media;
                 /**
                  * Optional one-liner about what this integration does
                  */
@@ -1405,7 +2580,7 @@ export interface Homepage {
             /**
              * Screenshot or illustration showing AI in action
              */
-            visual: number | Media;
+            visual?: (number | null) | Media;
             /**
              * Optional disclaimer about AI capabilities
              */
@@ -1591,7 +2766,7 @@ export interface Homepage {
       )[]
     | null;
   /**
-   * Page title for search engines. Include primary keyword near the front. (50-60 characters)
+   * Page title for search engines. Include primary keyword near the front. (30-60 characters)
    */
   metaTitle?: string | null;
   /**
