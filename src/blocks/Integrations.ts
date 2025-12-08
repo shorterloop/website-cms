@@ -72,7 +72,7 @@ export const IntegrationsBlock: Block = {
           name: 'integrations',
           type: 'array',
           label: 'Integrations',
-          dbName: 'items', // Shortened for DB
+          dbName: 'int_items', // Unique dbName to avoid conflict with RelatedContentBlock's 'items'
           required: true,
           minRows: 2,
           maxRows: 8,
