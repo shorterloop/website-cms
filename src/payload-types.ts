@@ -512,6 +512,369 @@ export interface Homepage {
             blockName?: string | null;
             blockType: 'metrics';
           }
+        | {
+            /**
+             * How to display the workflow steps
+             */
+            variant?: ('flow_line' | 'numbered' | 'cards' | 'timeline') | null;
+            /**
+             * Small text above the headline (e.g., "How It Works")
+             */
+            eyebrow?: string | null;
+            /**
+             * Section headline (e.g., "From Noise to Strategy")
+             */
+            headline: string;
+            /**
+             * Brief setup text
+             */
+            subheadline?: string | null;
+            /**
+             * The workflow steps (3-6 steps recommended)
+             */
+            steps: {
+              stepNumber: number;
+              /**
+               * Short label (e.g., "Signals", "Themes", "Opportunities")
+               */
+              label: string;
+              /**
+               * What happens at this stage
+               */
+              description: string;
+              /**
+               * Icon to display for this step
+               */
+              icon?:
+                | (
+                    | 'signal'
+                    | 'theme'
+                    | 'opportunity'
+                    | 'bet'
+                    | 'roadmap'
+                    | 'outcome'
+                    | 'collect'
+                    | 'analyze'
+                    | 'decide'
+                    | 'execute'
+                    | 'measure'
+                    | 'learn'
+                  )
+                | null;
+              /**
+               * Give this step visual emphasis (accent color)
+               */
+              isPivotPoint?: boolean | null;
+              /**
+               * Optional screenshot showing this step in action
+               */
+              screenshot?: (number | null) | Media;
+              id?: string | null;
+            }[];
+            /**
+             * Optional wrap-up text after the steps
+             */
+            conclusion?: string | null;
+            /**
+             * Optional diagram or illustration of the full workflow
+             */
+            visual?: (number | null) | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'workflow';
+          }
+        | {
+            /**
+             * How to display the pain points
+             */
+            variant?: ('list' | 'cards' | 'narrative' | 'warnings') | null;
+            /**
+             * Name the struggle. Can be provocative.
+             */
+            headline: string;
+            /**
+             * Optional elaboration (will be italicized)
+             */
+            subheadline?: string | null;
+            /**
+             * The story. Prose, not bullets. Should include antagonist + loss. Use for "narrative" variant.
+             */
+            narrative?: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
+            /**
+             * List of pain points (3-4 recommended for most contexts)
+             */
+            painPoints: {
+              /**
+               * The pain in one line
+               */
+              title: string;
+              /**
+               * Expand the pain. Be specific, not generic.
+               */
+              description: string;
+              icon?:
+                | (
+                    | 'warning'
+                    | 'error'
+                    | 'time'
+                    | 'money'
+                    | 'confusion'
+                    | 'disconnect'
+                    | 'chaos'
+                    | 'silence'
+                    | 'conflict'
+                    | 'loss'
+                  )
+                | null;
+              /**
+               * For warning signs variant - indicates progression
+               */
+              severity?: ('early' | 'mid' | 'late') | null;
+              /**
+               * What happens because of this pain point
+               */
+              consequence?: string | null;
+              id?: string | null;
+            }[];
+            /**
+             * The question they ask themselves (e.g., "How do I justify this to the board?")
+             */
+            emotionalQuestion?: string | null;
+            /**
+             * The villains (behaviors, not people)
+             */
+            antagonists?:
+              | {
+                  /**
+                   * e.g., "Loudest-voice wins"
+                   */
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            /**
+             * What's at stake
+             */
+            losses?:
+              | {
+                  /**
+                   * e.g., "6 months building the wrong feature"
+                   */
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'painPoints';
+          }
+        | {
+            /**
+             * How to display the transformation
+             */
+            variant?: ('side_by_side' | 'stacked' | 'timeline' | 'compact') | null;
+            /**
+             * e.g., "The Pivot"
+             */
+            eyebrow?: string | null;
+            /**
+             * e.g., "From chaos to clarity"
+             */
+            headline: string;
+            /**
+             * e.g., "Every transformation flows through the pivot."
+             */
+            subheadline?: string | null;
+            /**
+             * e.g., "The Status Quo"
+             */
+            beforeColumnLabel?: string | null;
+            /**
+             * e.g., "With Shorter Loop"
+             */
+            afterColumnLabel?: string | null;
+            /**
+             * Before → After pairs (4-6 recommended)
+             */
+            transformations: {
+              /**
+               * Problem state
+               */
+              beforeTitle: string;
+              /**
+               * Solution state
+               */
+              afterTitle: string;
+              /**
+               * Expanded pain
+               */
+              beforeDetail?: string | null;
+              /**
+               * Expanded outcome
+               */
+              afterDetail?: string | null;
+              id?: string | null;
+            }[];
+            /**
+             * Display statistics that reinforce the pain/transformation
+             */
+            showStatsBar?: boolean | null;
+            /**
+             * Stats that reinforce the transformation with data
+             */
+            stats?:
+              | {
+                  /**
+                   * e.g., "80%"
+                   */
+                  value: string;
+                  /**
+                   * e.g., "of features go unused"
+                   */
+                  label: string;
+                  id?: string | null;
+                }[]
+              | null;
+            /**
+             * Optional: How Shorter Loop fits as the operating system for product decisions
+             */
+            positioningStatement?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'transformation';
+          }
+        | {
+            /**
+             * How to display the integrations
+             */
+            variant?: ('grouped' | 'grid' | 'compact') | null;
+            /**
+             * e.g., "Works With Your Stack" or "25+ Integrations. One Hub."
+             */
+            headline: string;
+            /**
+             * Address the fear (e.g., "Keep using Jira. We'll handle the rest.")
+             */
+            subheadline: string;
+            /**
+             * Group integrations by category
+             */
+            integrationGroups: {
+              /**
+               * e.g., "Issue Trackers", "Support Tools", "Analytics"
+               */
+              groupName: string;
+              integrations: {
+                name: string;
+                status: 'live' | 'coming_soon' | 'beta';
+                /**
+                 * Highlight this integration
+                 */
+                featured?: boolean | null;
+                logo: number | Media;
+                /**
+                 * Optional one-liner about what this integration does
+                 */
+                description?: string | null;
+                id?: string | null;
+              }[];
+              id?: string | null;
+            }[];
+            /**
+             * Other ways to integrate (API, CSV, etc.)
+             */
+            additionalMethods?:
+              | {
+                  /**
+                   * e.g., "REST API", "CSV Import", "Webhooks"
+                   */
+                  title: string;
+                  description: string;
+                  icon?: ('api' | 'csv' | 'webhook' | 'zapier' | 'code') | null;
+                  id?: string | null;
+                }[]
+              | null;
+            /**
+             * e.g., "See All Integrations"
+             */
+            ctaText?: string | null;
+            /**
+             * Link to full integrations page
+             */
+            ctaUrl?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'integrations';
+          }
+        | {
+            /**
+             * How to display the related content
+             */
+            variant?: ('cards' | 'list' | 'compact') | null;
+            /**
+             * e.g., "Continue Learning" or "Related Resources"
+             */
+            headline?: string | null;
+            /**
+             * Display a prominent next action for the user
+             */
+            showNextStep?: boolean | null;
+            /**
+             * The main recommended action for the reader
+             */
+            nextStep?: {
+              /**
+               * e.g., "Watch the 3-minute demo"
+               */
+              label: string;
+              url: string;
+              type: 'demo_video' | 'documentation' | 'template' | 'guide' | 'trial';
+              /**
+               * Brief description of what they'll get
+               */
+              description?: string | null;
+            };
+            /**
+             * Links to related content (capabilities, articles, etc.)
+             */
+            relatedItems?:
+              | {
+                  title: string;
+                  url: string;
+                  /**
+                   * How this content relates to the current page
+                   */
+                  relationshipType?: ('works_with' | 'alternative_to' | 'builds_on' | 'feeds_into' | 'related') | null;
+                  contentType?: ('capability' | 'use_case' | 'blog' | 'guide' | 'case_study' | 'template') | null;
+                  /**
+                   * Brief description or why it's relevant
+                   */
+                  description?: string | null;
+                  /**
+                   * Optional thumbnail image
+                   */
+                  image?: (number | null) | Media;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'relatedContent';
+          }
       )[]
     | null;
   /**
@@ -629,6 +992,155 @@ export interface HomepageSelect<T extends boolean = true> {
                     id?: T;
                   };
               source?: T;
+              id?: T;
+              blockName?: T;
+            };
+        workflow?:
+          | T
+          | {
+              variant?: T;
+              eyebrow?: T;
+              headline?: T;
+              subheadline?: T;
+              steps?:
+                | T
+                | {
+                    stepNumber?: T;
+                    label?: T;
+                    description?: T;
+                    icon?: T;
+                    isPivotPoint?: T;
+                    screenshot?: T;
+                    id?: T;
+                  };
+              conclusion?: T;
+              visual?: T;
+              id?: T;
+              blockName?: T;
+            };
+        painPoints?:
+          | T
+          | {
+              variant?: T;
+              headline?: T;
+              subheadline?: T;
+              narrative?: T;
+              painPoints?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    severity?: T;
+                    consequence?: T;
+                    id?: T;
+                  };
+              emotionalQuestion?: T;
+              antagonists?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              losses?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        transformation?:
+          | T
+          | {
+              variant?: T;
+              eyebrow?: T;
+              headline?: T;
+              subheadline?: T;
+              beforeColumnLabel?: T;
+              afterColumnLabel?: T;
+              transformations?:
+                | T
+                | {
+                    beforeTitle?: T;
+                    afterTitle?: T;
+                    beforeDetail?: T;
+                    afterDetail?: T;
+                    id?: T;
+                  };
+              showStatsBar?: T;
+              stats?:
+                | T
+                | {
+                    value?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              positioningStatement?: T;
+              id?: T;
+              blockName?: T;
+            };
+        integrations?:
+          | T
+          | {
+              variant?: T;
+              headline?: T;
+              subheadline?: T;
+              integrationGroups?:
+                | T
+                | {
+                    groupName?: T;
+                    integrations?:
+                      | T
+                      | {
+                          name?: T;
+                          status?: T;
+                          featured?: T;
+                          logo?: T;
+                          description?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              additionalMethods?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              ctaText?: T;
+              ctaUrl?: T;
+              id?: T;
+              blockName?: T;
+            };
+        relatedContent?:
+          | T
+          | {
+              variant?: T;
+              headline?: T;
+              showNextStep?: T;
+              nextStep?:
+                | T
+                | {
+                    label?: T;
+                    url?: T;
+                    type?: T;
+                    description?: T;
+                  };
+              relatedItems?:
+                | T
+                | {
+                    title?: T;
+                    url?: T;
+                    relationshipType?: T;
+                    contentType?: T;
+                    description?: T;
+                    image?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
