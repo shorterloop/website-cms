@@ -1,7 +1,7 @@
 import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-d1-sqlite'
 
 export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
-  await db.run(sql`CREATE TABLE \`capabilities_blocks_hero\` (
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`capabilities_blocks_hero\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -22,11 +22,11 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`_parent_id\`) REFERENCES \`capabilities\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
   `)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_hero_order_idx\` ON \`capabilities_blocks_hero\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_hero_parent_id_idx\` ON \`capabilities_blocks_hero\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_hero_path_idx\` ON \`capabilities_blocks_hero\` (\`_path\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_hero_image_idx\` ON \`capabilities_blocks_hero\` (\`image_id\`);`)
-  await db.run(sql`CREATE TABLE \`capabilities_blocks_workflow_steps\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_hero_order_idx\` ON \`capabilities_blocks_hero\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_hero_parent_id_idx\` ON \`capabilities_blocks_hero\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_hero_path_idx\` ON \`capabilities_blocks_hero\` (\`_path\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_hero_image_idx\` ON \`capabilities_blocks_hero\` (\`image_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`capabilities_blocks_workflow_steps\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` text NOT NULL,
   	\`id\` text PRIMARY KEY NOT NULL,
@@ -40,10 +40,10 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`_parent_id\`) REFERENCES \`capabilities_blocks_workflow\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
   `)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_workflow_steps_order_idx\` ON \`capabilities_blocks_workflow_steps\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_workflow_steps_parent_id_idx\` ON \`capabilities_blocks_workflow_steps\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_workflow_steps_screenshot_idx\` ON \`capabilities_blocks_workflow_steps\` (\`screenshot_id\`);`)
-  await db.run(sql`CREATE TABLE \`capabilities_blocks_workflow\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_workflow_steps_order_idx\` ON \`capabilities_blocks_workflow_steps\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_workflow_steps_parent_id_idx\` ON \`capabilities_blocks_workflow_steps\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_workflow_steps_screenshot_idx\` ON \`capabilities_blocks_workflow_steps\` (\`screenshot_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`capabilities_blocks_workflow\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -59,11 +59,11 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`_parent_id\`) REFERENCES \`capabilities\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
   `)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_workflow_order_idx\` ON \`capabilities_blocks_workflow\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_workflow_parent_id_idx\` ON \`capabilities_blocks_workflow\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_workflow_path_idx\` ON \`capabilities_blocks_workflow\` (\`_path\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_workflow_visual_idx\` ON \`capabilities_blocks_workflow\` (\`visual_id\`);`)
-  await db.run(sql`CREATE TABLE \`capabilities_blocks_cta_trust_signals\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_workflow_order_idx\` ON \`capabilities_blocks_workflow\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_workflow_parent_id_idx\` ON \`capabilities_blocks_workflow\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_workflow_path_idx\` ON \`capabilities_blocks_workflow\` (\`_path\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_workflow_visual_idx\` ON \`capabilities_blocks_workflow\` (\`visual_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`capabilities_blocks_cta_trust_signals\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` text NOT NULL,
   	\`id\` text PRIMARY KEY NOT NULL,
@@ -71,9 +71,9 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`_parent_id\`) REFERENCES \`capabilities_blocks_cta\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
   `)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_cta_trust_signals_order_idx\` ON \`capabilities_blocks_cta_trust_signals\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_cta_trust_signals_parent_id_idx\` ON \`capabilities_blocks_cta_trust_signals\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE TABLE \`capabilities_blocks_cta\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_cta_trust_signals_order_idx\` ON \`capabilities_blocks_cta_trust_signals\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_cta_trust_signals_parent_id_idx\` ON \`capabilities_blocks_cta_trust_signals\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`capabilities_blocks_cta\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -92,10 +92,10 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`_parent_id\`) REFERENCES \`capabilities\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
   `)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_cta_order_idx\` ON \`capabilities_blocks_cta\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_cta_parent_id_idx\` ON \`capabilities_blocks_cta\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_cta_path_idx\` ON \`capabilities_blocks_cta\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`capabilities_blocks_faq_questions\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_cta_order_idx\` ON \`capabilities_blocks_cta\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_cta_parent_id_idx\` ON \`capabilities_blocks_cta\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_cta_path_idx\` ON \`capabilities_blocks_cta\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`capabilities_blocks_faq_questions\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` text NOT NULL,
   	\`id\` text PRIMARY KEY NOT NULL,
@@ -106,9 +106,9 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`_parent_id\`) REFERENCES \`capabilities_blocks_faq\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
   `)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_faq_questions_order_idx\` ON \`capabilities_blocks_faq_questions\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_faq_questions_parent_id_idx\` ON \`capabilities_blocks_faq_questions\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE TABLE \`capabilities_blocks_faq\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_faq_questions_order_idx\` ON \`capabilities_blocks_faq_questions\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_faq_questions_parent_id_idx\` ON \`capabilities_blocks_faq_questions\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`capabilities_blocks_faq\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -118,10 +118,10 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`_parent_id\`) REFERENCES \`capabilities\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
   `)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_faq_order_idx\` ON \`capabilities_blocks_faq\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_faq_parent_id_idx\` ON \`capabilities_blocks_faq\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_faq_path_idx\` ON \`capabilities_blocks_faq\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`capabilities_blocks_testimonial_quotes\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_faq_order_idx\` ON \`capabilities_blocks_faq\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_faq_parent_id_idx\` ON \`capabilities_blocks_faq\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_faq_path_idx\` ON \`capabilities_blocks_faq\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`capabilities_blocks_testimonial_quotes\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` text NOT NULL,
   	\`id\` text PRIMARY KEY NOT NULL,
@@ -137,11 +137,11 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`_parent_id\`) REFERENCES \`capabilities_blocks_testimonial\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
   `)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_testimonial_quotes_order_idx\` ON \`capabilities_blocks_testimonial_quotes\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_testimonial_quotes_parent_id_idx\` ON \`capabilities_blocks_testimonial_quotes\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_testimonial_quotes_author_image_idx\` ON \`capabilities_blocks_testimonial_quotes\` (\`author_image_id\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_testimonial_quotes_company_logo_idx\` ON \`capabilities_blocks_testimonial_quotes\` (\`company_logo_id\`);`)
-  await db.run(sql`CREATE TABLE \`capabilities_blocks_testimonial\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_testimonial_quotes_order_idx\` ON \`capabilities_blocks_testimonial_quotes\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_testimonial_quotes_parent_id_idx\` ON \`capabilities_blocks_testimonial_quotes\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_testimonial_quotes_author_image_idx\` ON \`capabilities_blocks_testimonial_quotes\` (\`author_image_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_testimonial_quotes_company_logo_idx\` ON \`capabilities_blocks_testimonial_quotes\` (\`company_logo_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`capabilities_blocks_testimonial\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -152,10 +152,10 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`_parent_id\`) REFERENCES \`capabilities\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
   `)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_testimonial_order_idx\` ON \`capabilities_blocks_testimonial\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_testimonial_parent_id_idx\` ON \`capabilities_blocks_testimonial\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_blocks_testimonial_path_idx\` ON \`capabilities_blocks_testimonial\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`capabilities_meta_keywords\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_testimonial_order_idx\` ON \`capabilities_blocks_testimonial\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_testimonial_parent_id_idx\` ON \`capabilities_blocks_testimonial\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_blocks_testimonial_path_idx\` ON \`capabilities_blocks_testimonial\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`capabilities_meta_keywords\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`id\` text PRIMARY KEY NOT NULL,
@@ -163,9 +163,9 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`_parent_id\`) REFERENCES \`capabilities\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
   `)
-  await db.run(sql`CREATE INDEX \`capabilities_meta_keywords_order_idx\` ON \`capabilities_meta_keywords\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_meta_keywords_parent_id_idx\` ON \`capabilities_meta_keywords\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE TABLE \`capabilities\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_meta_keywords_order_idx\` ON \`capabilities_meta_keywords\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_meta_keywords_parent_id_idx\` ON \`capabilities_meta_keywords\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`capabilities\` (
   	\`id\` integer PRIMARY KEY NOT NULL,
   	\`display_name\` text NOT NULL,
   	\`slug\` text NOT NULL,
@@ -191,11 +191,11 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`og_image_id\`) REFERENCES \`media\`(\`id\`) ON UPDATE no action ON DELETE set null
   );
   `)
-  await db.run(sql`CREATE UNIQUE INDEX \`capabilities_slug_idx\` ON \`capabilities\` (\`slug\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_og_image_idx\` ON \`capabilities\` (\`og_image_id\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_updated_at_idx\` ON \`capabilities\` (\`updated_at\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_created_at_idx\` ON \`capabilities\` (\`created_at\`);`)
-  await db.run(sql`CREATE TABLE \`capabilities_rels\` (
+  await db.run(sql`CREATE UNIQUE INDEX IF NOT EXISTS \`capabilities_slug_idx\` ON \`capabilities\` (\`slug\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_og_image_idx\` ON \`capabilities\` (\`og_image_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_updated_at_idx\` ON \`capabilities\` (\`updated_at\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_created_at_idx\` ON \`capabilities\` (\`created_at\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`capabilities_rels\` (
   	\`id\` integer PRIMARY KEY NOT NULL,
   	\`order\` integer,
   	\`parent_id\` integer NOT NULL,
@@ -205,12 +205,12 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`capabilities_id\`) REFERENCES \`capabilities\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
   `)
-  await db.run(sql`CREATE INDEX \`capabilities_rels_order_idx\` ON \`capabilities_rels\` (\`order\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_rels_parent_idx\` ON \`capabilities_rels\` (\`parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_rels_path_idx\` ON \`capabilities_rels\` (\`path\`);`)
-  await db.run(sql`CREATE INDEX \`capabilities_rels_capabilities_id_idx\` ON \`capabilities_rels\` (\`capabilities_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_rels_order_idx\` ON \`capabilities_rels\` (\`order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_rels_parent_idx\` ON \`capabilities_rels\` (\`parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_rels_path_idx\` ON \`capabilities_rels\` (\`path\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`capabilities_rels_capabilities_id_idx\` ON \`capabilities_rels\` (\`capabilities_id\`);`)
   await db.run(sql`PRAGMA foreign_keys=OFF;`)
-  await db.run(sql`CREATE TABLE \`__new_pains\` (
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_pains\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -228,10 +228,10 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.run(sql`DROP TABLE \`pains\`;`)
   await db.run(sql`ALTER TABLE \`__new_pains\` RENAME TO \`pains\`;`)
   await db.run(sql`PRAGMA foreign_keys=ON;`)
-  await db.run(sql`CREATE INDEX \`pains_order_idx\` ON \`pains\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`pains_parent_id_idx\` ON \`pains\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`pains_path_idx\` ON \`pains\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_intgr\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`pains_order_idx\` ON \`pains\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`pains_parent_id_idx\` ON \`pains\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`pains_path_idx\` ON \`pains\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_intgr\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -248,10 +248,10 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.run(sql`INSERT INTO \`__new_intgr\`("_order", "_parent_id", "_path", "id", "variant", "headline", "subheadline", "cta_text", "cta_url", "block_name") SELECT "_order", "_parent_id", "_path", "id", "variant", "headline", "subheadline", "cta_text", "cta_url", "block_name" FROM \`intgr\`;`)
   await db.run(sql`DROP TABLE \`intgr\`;`)
   await db.run(sql`ALTER TABLE \`__new_intgr\` RENAME TO \`intgr\`;`)
-  await db.run(sql`CREATE INDEX \`intgr_order_idx\` ON \`intgr\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`intgr_parent_id_idx\` ON \`intgr\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`intgr_path_idx\` ON \`intgr\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_related\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`intgr_order_idx\` ON \`intgr\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`intgr_parent_id_idx\` ON \`intgr\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`intgr_path_idx\` ON \`intgr\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_related\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -270,10 +270,10 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.run(sql`INSERT INTO \`__new_related\`("_order", "_parent_id", "_path", "id", "variant", "headline", "show_next_step", "next_step_label", "next_step_url", "next_step_type", "next_step_description", "block_name") SELECT "_order", "_parent_id", "_path", "id", "variant", "headline", "show_next_step", "next_step_label", "next_step_url", "next_step_type", "next_step_description", "block_name" FROM \`related\`;`)
   await db.run(sql`DROP TABLE \`related\`;`)
   await db.run(sql`ALTER TABLE \`__new_related\` RENAME TO \`related\`;`)
-  await db.run(sql`CREATE INDEX \`related_order_idx\` ON \`related\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`related_parent_id_idx\` ON \`related\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`related_path_idx\` ON \`related\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_compare\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`related_order_idx\` ON \`related\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`related_parent_id_idx\` ON \`related\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`related_path_idx\` ON \`related\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_compare\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -289,10 +289,10 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.run(sql`INSERT INTO \`__new_compare\`("_order", "_parent_id", "_path", "id", "headline", "subheadline", "comparison_type", "conclusion", "block_name") SELECT "_order", "_parent_id", "_path", "id", "headline", "subheadline", "comparison_type", "conclusion", "block_name" FROM \`compare\`;`)
   await db.run(sql`DROP TABLE \`compare\`;`)
   await db.run(sql`ALTER TABLE \`__new_compare\` RENAME TO \`compare\`;`)
-  await db.run(sql`CREATE INDEX \`compare_order_idx\` ON \`compare\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`compare_parent_id_idx\` ON \`compare\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`compare_path_idx\` ON \`compare\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_feats\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`compare_order_idx\` ON \`compare\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`compare_parent_id_idx\` ON \`compare\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`compare_path_idx\` ON \`compare\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_feats\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -306,10 +306,10 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.run(sql`INSERT INTO \`__new_feats\`("_order", "_parent_id", "_path", "id", "headline", "subheadline", "block_name") SELECT "_order", "_parent_id", "_path", "id", "headline", "subheadline", "block_name" FROM \`feats\`;`)
   await db.run(sql`DROP TABLE \`feats\`;`)
   await db.run(sql`ALTER TABLE \`__new_feats\` RENAME TO \`feats\`;`)
-  await db.run(sql`CREATE INDEX \`feats_order_idx\` ON \`feats\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`feats_parent_id_idx\` ON \`feats\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`feats_path_idx\` ON \`feats\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_ucase\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`feats_order_idx\` ON \`feats\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`feats_parent_id_idx\` ON \`feats\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`feats_path_idx\` ON \`feats\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_ucase\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -323,10 +323,10 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.run(sql`INSERT INTO \`__new_ucase\`("_order", "_parent_id", "_path", "id", "headline", "subheadline", "block_name") SELECT "_order", "_parent_id", "_path", "id", "headline", "subheadline", "block_name" FROM \`ucase\`;`)
   await db.run(sql`DROP TABLE \`ucase\`;`)
   await db.run(sql`ALTER TABLE \`__new_ucase\` RENAME TO \`ucase\`;`)
-  await db.run(sql`CREATE INDEX \`ucase_order_idx\` ON \`ucase\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`ucase_parent_id_idx\` ON \`ucase\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`ucase_path_idx\` ON \`ucase\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_preview\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ucase_order_idx\` ON \`ucase\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ucase_parent_id_idx\` ON \`ucase\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ucase_path_idx\` ON \`ucase\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_preview\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -339,10 +339,10 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.run(sql`INSERT INTO \`__new_preview\`("_order", "_parent_id", "_path", "id", "headline", "block_name") SELECT "_order", "_parent_id", "_path", "id", "headline", "block_name" FROM \`preview\`;`)
   await db.run(sql`DROP TABLE \`preview\`;`)
   await db.run(sql`ALTER TABLE \`__new_preview\` RENAME TO \`preview\`;`)
-  await db.run(sql`CREATE INDEX \`preview_order_idx\` ON \`preview\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`preview_parent_id_idx\` ON \`preview\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`preview_path_idx\` ON \`preview\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_proof\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`preview_order_idx\` ON \`preview\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`preview_parent_id_idx\` ON \`preview\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`preview_path_idx\` ON \`preview\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_proof\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -360,11 +360,11 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.run(sql`INSERT INTO \`__new_proof\`("_order", "_parent_id", "_path", "id", "headline", "proof_type", "image_id", "caption", "context", "block_name") SELECT "_order", "_parent_id", "_path", "id", "headline", "proof_type", "image_id", "caption", "context", "block_name" FROM \`proof\`;`)
   await db.run(sql`DROP TABLE \`proof\`;`)
   await db.run(sql`ALTER TABLE \`__new_proof\` RENAME TO \`proof\`;`)
-  await db.run(sql`CREATE INDEX \`proof_order_idx\` ON \`proof\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`proof_parent_id_idx\` ON \`proof\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`proof_path_idx\` ON \`proof\` (\`_path\`);`)
-  await db.run(sql`CREATE INDEX \`proof_image_idx\` ON \`proof\` (\`image_id\`);`)
-  await db.run(sql`CREATE TABLE \`__new_homepage_blocks_hero\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`proof_order_idx\` ON \`proof\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`proof_parent_id_idx\` ON \`proof\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`proof_path_idx\` ON \`proof\` (\`_path\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`proof_image_idx\` ON \`proof\` (\`image_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_homepage_blocks_hero\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -388,11 +388,11 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.run(sql`INSERT INTO \`__new_homepage_blocks_hero\`("_order", "_parent_id", "_path", "id", "eyebrow", "headline", "headline_emphasis_word", "subheadline", "supporting_text", "primary_cta_text", "primary_cta_url", "secondary_cta_text", "secondary_cta_url", "image_id", "trust_note", "block_name") SELECT "_order", "_parent_id", "_path", "id", "eyebrow", "headline", "headline_emphasis_word", "subheadline", "supporting_text", "primary_cta_text", "primary_cta_url", "secondary_cta_text", "secondary_cta_url", "image_id", "trust_note", "block_name" FROM \`homepage_blocks_hero\`;`)
   await db.run(sql`DROP TABLE \`homepage_blocks_hero\`;`)
   await db.run(sql`ALTER TABLE \`__new_homepage_blocks_hero\` RENAME TO \`homepage_blocks_hero\`;`)
-  await db.run(sql`CREATE INDEX \`homepage_blocks_hero_order_idx\` ON \`homepage_blocks_hero\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`homepage_blocks_hero_parent_id_idx\` ON \`homepage_blocks_hero\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`homepage_blocks_hero_path_idx\` ON \`homepage_blocks_hero\` (\`_path\`);`)
-  await db.run(sql`CREATE INDEX \`homepage_blocks_hero_image_idx\` ON \`homepage_blocks_hero\` (\`image_id\`);`)
-  await db.run(sql`CREATE TABLE \`__new_int_items\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`homepage_blocks_hero_order_idx\` ON \`homepage_blocks_hero\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`homepage_blocks_hero_parent_id_idx\` ON \`homepage_blocks_hero\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`homepage_blocks_hero_path_idx\` ON \`homepage_blocks_hero\` (\`_path\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`homepage_blocks_hero_image_idx\` ON \`homepage_blocks_hero\` (\`image_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_int_items\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` text NOT NULL,
   	\`id\` text PRIMARY KEY NOT NULL,
@@ -408,10 +408,10 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.run(sql`INSERT INTO \`__new_int_items\`("_order", "_parent_id", "id", "name", "status", "featured", "logo_id", "description") SELECT "_order", "_parent_id", "id", "name", "status", "featured", "logo_id", "description" FROM \`int_items\`;`)
   await db.run(sql`DROP TABLE \`int_items\`;`)
   await db.run(sql`ALTER TABLE \`__new_int_items\` RENAME TO \`int_items\`;`)
-  await db.run(sql`CREATE INDEX \`int_items_order_idx\` ON \`int_items\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`int_items_parent_id_idx\` ON \`int_items\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`int_items_logo_idx\` ON \`int_items\` (\`logo_id\`);`)
-  await db.run(sql`CREATE TABLE \`__new_ai\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`int_items_order_idx\` ON \`int_items\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`int_items_parent_id_idx\` ON \`int_items\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`int_items_logo_idx\` ON \`int_items\` (\`logo_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_ai\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -430,12 +430,12 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.run(sql`INSERT INTO \`__new_ai\`("_order", "_parent_id", "_path", "id", "eyebrow", "headline", "subheadline", "body", "visual_id", "disclaimer", "block_name") SELECT "_order", "_parent_id", "_path", "id", "eyebrow", "headline", "subheadline", "body", "visual_id", "disclaimer", "block_name" FROM \`ai\`;`)
   await db.run(sql`DROP TABLE \`ai\`;`)
   await db.run(sql`ALTER TABLE \`__new_ai\` RENAME TO \`ai\`;`)
-  await db.run(sql`CREATE INDEX \`ai_order_idx\` ON \`ai\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`ai_parent_id_idx\` ON \`ai\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`ai_path_idx\` ON \`ai\` (\`_path\`);`)
-  await db.run(sql`CREATE INDEX \`ai_visual_idx\` ON \`ai\` (\`visual_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ai_order_idx\` ON \`ai\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ai_parent_id_idx\` ON \`ai\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ai_path_idx\` ON \`ai\` (\`_path\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ai_visual_idx\` ON \`ai\` (\`visual_id\`);`)
   await db.run(sql`ALTER TABLE \`payload_locked_documents_rels\` ADD \`capabilities_id\` integer REFERENCES capabilities(id);`)
-  await db.run(sql`CREATE INDEX \`payload_locked_documents_rels_capabilities_id_idx\` ON \`payload_locked_documents_rels\` (\`capabilities_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`payload_locked_documents_rels_capabilities_id_idx\` ON \`payload_locked_documents_rels\` (\`capabilities_id\`);`)
 }
 
 export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
@@ -452,7 +452,7 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`DROP TABLE \`capabilities\`;`)
   await db.run(sql`DROP TABLE \`capabilities_rels\`;`)
   await db.run(sql`PRAGMA foreign_keys=OFF;`)
-  await db.run(sql`CREATE TABLE \`__new_pains\` (
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_pains\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -470,10 +470,10 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`DROP TABLE \`pains\`;`)
   await db.run(sql`ALTER TABLE \`__new_pains\` RENAME TO \`pains\`;`)
   await db.run(sql`PRAGMA foreign_keys=ON;`)
-  await db.run(sql`CREATE INDEX \`pains_order_idx\` ON \`pains\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`pains_parent_id_idx\` ON \`pains\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`pains_path_idx\` ON \`pains\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_preview\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`pains_order_idx\` ON \`pains\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`pains_parent_id_idx\` ON \`pains\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`pains_path_idx\` ON \`pains\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_preview\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -486,10 +486,10 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`INSERT INTO \`__new_preview\`("_order", "_parent_id", "_path", "id", "headline", "block_name") SELECT "_order", "_parent_id", "_path", "id", "headline", "block_name" FROM \`preview\`;`)
   await db.run(sql`DROP TABLE \`preview\`;`)
   await db.run(sql`ALTER TABLE \`__new_preview\` RENAME TO \`preview\`;`)
-  await db.run(sql`CREATE INDEX \`preview_order_idx\` ON \`preview\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`preview_parent_id_idx\` ON \`preview\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`preview_path_idx\` ON \`preview\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_feats\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`preview_order_idx\` ON \`preview\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`preview_parent_id_idx\` ON \`preview\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`preview_path_idx\` ON \`preview\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_feats\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -503,10 +503,10 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`INSERT INTO \`__new_feats\`("_order", "_parent_id", "_path", "id", "headline", "subheadline", "block_name") SELECT "_order", "_parent_id", "_path", "id", "headline", "subheadline", "block_name" FROM \`feats\`;`)
   await db.run(sql`DROP TABLE \`feats\`;`)
   await db.run(sql`ALTER TABLE \`__new_feats\` RENAME TO \`feats\`;`)
-  await db.run(sql`CREATE INDEX \`feats_order_idx\` ON \`feats\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`feats_parent_id_idx\` ON \`feats\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`feats_path_idx\` ON \`feats\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_proof\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`feats_order_idx\` ON \`feats\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`feats_parent_id_idx\` ON \`feats\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`feats_path_idx\` ON \`feats\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_proof\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -524,11 +524,11 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`INSERT INTO \`__new_proof\`("_order", "_parent_id", "_path", "id", "headline", "proof_type", "image_id", "caption", "context", "block_name") SELECT "_order", "_parent_id", "_path", "id", "headline", "proof_type", "image_id", "caption", "context", "block_name" FROM \`proof\`;`)
   await db.run(sql`DROP TABLE \`proof\`;`)
   await db.run(sql`ALTER TABLE \`__new_proof\` RENAME TO \`proof\`;`)
-  await db.run(sql`CREATE INDEX \`proof_order_idx\` ON \`proof\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`proof_parent_id_idx\` ON \`proof\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`proof_path_idx\` ON \`proof\` (\`_path\`);`)
-  await db.run(sql`CREATE INDEX \`proof_image_idx\` ON \`proof\` (\`image_id\`);`)
-  await db.run(sql`CREATE TABLE \`__new_intgr\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`proof_order_idx\` ON \`proof\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`proof_parent_id_idx\` ON \`proof\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`proof_path_idx\` ON \`proof\` (\`_path\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`proof_image_idx\` ON \`proof\` (\`image_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_intgr\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -545,10 +545,10 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`INSERT INTO \`__new_intgr\`("_order", "_parent_id", "_path", "id", "variant", "headline", "subheadline", "cta_text", "cta_url", "block_name") SELECT "_order", "_parent_id", "_path", "id", "variant", "headline", "subheadline", "cta_text", "cta_url", "block_name" FROM \`intgr\`;`)
   await db.run(sql`DROP TABLE \`intgr\`;`)
   await db.run(sql`ALTER TABLE \`__new_intgr\` RENAME TO \`intgr\`;`)
-  await db.run(sql`CREATE INDEX \`intgr_order_idx\` ON \`intgr\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`intgr_parent_id_idx\` ON \`intgr\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`intgr_path_idx\` ON \`intgr\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_ucase\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`intgr_order_idx\` ON \`intgr\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`intgr_parent_id_idx\` ON \`intgr\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`intgr_path_idx\` ON \`intgr\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_ucase\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -562,10 +562,10 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`INSERT INTO \`__new_ucase\`("_order", "_parent_id", "_path", "id", "headline", "subheadline", "block_name") SELECT "_order", "_parent_id", "_path", "id", "headline", "subheadline", "block_name" FROM \`ucase\`;`)
   await db.run(sql`DROP TABLE \`ucase\`;`)
   await db.run(sql`ALTER TABLE \`__new_ucase\` RENAME TO \`ucase\`;`)
-  await db.run(sql`CREATE INDEX \`ucase_order_idx\` ON \`ucase\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`ucase_parent_id_idx\` ON \`ucase\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`ucase_path_idx\` ON \`ucase\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_compare\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ucase_order_idx\` ON \`ucase\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ucase_parent_id_idx\` ON \`ucase\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ucase_path_idx\` ON \`ucase\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_compare\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -581,10 +581,10 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`INSERT INTO \`__new_compare\`("_order", "_parent_id", "_path", "id", "headline", "subheadline", "comparison_type", "conclusion", "block_name") SELECT "_order", "_parent_id", "_path", "id", "headline", "subheadline", "comparison_type", "conclusion", "block_name" FROM \`compare\`;`)
   await db.run(sql`DROP TABLE \`compare\`;`)
   await db.run(sql`ALTER TABLE \`__new_compare\` RENAME TO \`compare\`;`)
-  await db.run(sql`CREATE INDEX \`compare_order_idx\` ON \`compare\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`compare_parent_id_idx\` ON \`compare\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`compare_path_idx\` ON \`compare\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_related\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`compare_order_idx\` ON \`compare\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`compare_parent_id_idx\` ON \`compare\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`compare_path_idx\` ON \`compare\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_related\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -603,10 +603,10 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`INSERT INTO \`__new_related\`("_order", "_parent_id", "_path", "id", "variant", "headline", "show_next_step", "next_step_label", "next_step_url", "next_step_type", "next_step_description", "block_name") SELECT "_order", "_parent_id", "_path", "id", "variant", "headline", "show_next_step", "next_step_label", "next_step_url", "next_step_type", "next_step_description", "block_name" FROM \`related\`;`)
   await db.run(sql`DROP TABLE \`related\`;`)
   await db.run(sql`ALTER TABLE \`__new_related\` RENAME TO \`related\`;`)
-  await db.run(sql`CREATE INDEX \`related_order_idx\` ON \`related\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`related_parent_id_idx\` ON \`related\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`related_path_idx\` ON \`related\` (\`_path\`);`)
-  await db.run(sql`CREATE TABLE \`__new_payload_locked_documents_rels\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`related_order_idx\` ON \`related\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`related_parent_id_idx\` ON \`related\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`related_path_idx\` ON \`related\` (\`_path\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_payload_locked_documents_rels\` (
   	\`id\` integer PRIMARY KEY NOT NULL,
   	\`order\` integer,
   	\`parent_id\` integer NOT NULL,
@@ -621,12 +621,12 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`INSERT INTO \`__new_payload_locked_documents_rels\`("id", "order", "parent_id", "path", "users_id", "media_id") SELECT "id", "order", "parent_id", "path", "users_id", "media_id" FROM \`payload_locked_documents_rels\`;`)
   await db.run(sql`DROP TABLE \`payload_locked_documents_rels\`;`)
   await db.run(sql`ALTER TABLE \`__new_payload_locked_documents_rels\` RENAME TO \`payload_locked_documents_rels\`;`)
-  await db.run(sql`CREATE INDEX \`payload_locked_documents_rels_order_idx\` ON \`payload_locked_documents_rels\` (\`order\`);`)
-  await db.run(sql`CREATE INDEX \`payload_locked_documents_rels_parent_idx\` ON \`payload_locked_documents_rels\` (\`parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`payload_locked_documents_rels_path_idx\` ON \`payload_locked_documents_rels\` (\`path\`);`)
-  await db.run(sql`CREATE INDEX \`payload_locked_documents_rels_users_id_idx\` ON \`payload_locked_documents_rels\` (\`users_id\`);`)
-  await db.run(sql`CREATE INDEX \`payload_locked_documents_rels_media_id_idx\` ON \`payload_locked_documents_rels\` (\`media_id\`);`)
-  await db.run(sql`CREATE TABLE \`__new_int_items\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`payload_locked_documents_rels_order_idx\` ON \`payload_locked_documents_rels\` (\`order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`payload_locked_documents_rels_parent_idx\` ON \`payload_locked_documents_rels\` (\`parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`payload_locked_documents_rels_path_idx\` ON \`payload_locked_documents_rels\` (\`path\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`payload_locked_documents_rels_users_id_idx\` ON \`payload_locked_documents_rels\` (\`users_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`payload_locked_documents_rels_media_id_idx\` ON \`payload_locked_documents_rels\` (\`media_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_int_items\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` text NOT NULL,
   	\`id\` text PRIMARY KEY NOT NULL,
@@ -642,10 +642,10 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`INSERT INTO \`__new_int_items\`("_order", "_parent_id", "id", "name", "status", "featured", "logo_id", "description") SELECT "_order", "_parent_id", "id", "name", "status", "featured", "logo_id", "description" FROM \`int_items\`;`)
   await db.run(sql`DROP TABLE \`int_items\`;`)
   await db.run(sql`ALTER TABLE \`__new_int_items\` RENAME TO \`int_items\`;`)
-  await db.run(sql`CREATE INDEX \`int_items_order_idx\` ON \`int_items\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`int_items_parent_id_idx\` ON \`int_items\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`int_items_logo_idx\` ON \`int_items\` (\`logo_id\`);`)
-  await db.run(sql`CREATE TABLE \`__new_homepage_blocks_hero\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`int_items_order_idx\` ON \`int_items\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`int_items_parent_id_idx\` ON \`int_items\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`int_items_logo_idx\` ON \`int_items\` (\`logo_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_homepage_blocks_hero\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -669,11 +669,11 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`INSERT INTO \`__new_homepage_blocks_hero\`("_order", "_parent_id", "_path", "id", "eyebrow", "headline", "headline_emphasis_word", "subheadline", "supporting_text", "primary_cta_text", "primary_cta_url", "secondary_cta_text", "secondary_cta_url", "image_id", "trust_note", "block_name") SELECT "_order", "_parent_id", "_path", "id", "eyebrow", "headline", "headline_emphasis_word", "subheadline", "supporting_text", "primary_cta_text", "primary_cta_url", "secondary_cta_text", "secondary_cta_url", "image_id", "trust_note", "block_name" FROM \`homepage_blocks_hero\`;`)
   await db.run(sql`DROP TABLE \`homepage_blocks_hero\`;`)
   await db.run(sql`ALTER TABLE \`__new_homepage_blocks_hero\` RENAME TO \`homepage_blocks_hero\`;`)
-  await db.run(sql`CREATE INDEX \`homepage_blocks_hero_order_idx\` ON \`homepage_blocks_hero\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`homepage_blocks_hero_parent_id_idx\` ON \`homepage_blocks_hero\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`homepage_blocks_hero_path_idx\` ON \`homepage_blocks_hero\` (\`_path\`);`)
-  await db.run(sql`CREATE INDEX \`homepage_blocks_hero_image_idx\` ON \`homepage_blocks_hero\` (\`image_id\`);`)
-  await db.run(sql`CREATE TABLE \`__new_ai\` (
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`homepage_blocks_hero_order_idx\` ON \`homepage_blocks_hero\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`homepage_blocks_hero_parent_id_idx\` ON \`homepage_blocks_hero\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`homepage_blocks_hero_path_idx\` ON \`homepage_blocks_hero\` (\`_path\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`homepage_blocks_hero_image_idx\` ON \`homepage_blocks_hero\` (\`image_id\`);`)
+  await db.run(sql`CREATE TABLE IF NOT EXISTS \`__new_ai\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
   	\`_path\` text NOT NULL,
@@ -692,8 +692,8 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`INSERT INTO \`__new_ai\`("_order", "_parent_id", "_path", "id", "eyebrow", "headline", "subheadline", "body", "visual_id", "disclaimer", "block_name") SELECT "_order", "_parent_id", "_path", "id", "eyebrow", "headline", "subheadline", "body", "visual_id", "disclaimer", "block_name" FROM \`ai\`;`)
   await db.run(sql`DROP TABLE \`ai\`;`)
   await db.run(sql`ALTER TABLE \`__new_ai\` RENAME TO \`ai\`;`)
-  await db.run(sql`CREATE INDEX \`ai_order_idx\` ON \`ai\` (\`_order\`);`)
-  await db.run(sql`CREATE INDEX \`ai_parent_id_idx\` ON \`ai\` (\`_parent_id\`);`)
-  await db.run(sql`CREATE INDEX \`ai_path_idx\` ON \`ai\` (\`_path\`);`)
-  await db.run(sql`CREATE INDEX \`ai_visual_idx\` ON \`ai\` (\`visual_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ai_order_idx\` ON \`ai\` (\`_order\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ai_parent_id_idx\` ON \`ai\` (\`_parent_id\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ai_path_idx\` ON \`ai\` (\`_path\`);`)
+  await db.run(sql`CREATE INDEX IF NOT EXISTS \`ai_visual_idx\` ON \`ai\` (\`visual_id\`);`)
 }
